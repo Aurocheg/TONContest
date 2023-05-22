@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "08F19077-7570-4C2D-9B86-A64F257FD693"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1768D212-5D82-4BEA-AEB5-29357B35C4BD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TONApp/TONApp/Service/Database/UserDefaultsObserver.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "observeValue(forKeyPath:of:change:context:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1768D212-5D82-4BEA-AEB5-29357B35C4BD - 6decfdd0006212c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TONApp.UserDefaultsObserver.() -&gt; TONApp.UserDefaultsObserver.init() -&gt; TONApp.UserDefaultsObserver"
+                  moduleName = "TONApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aurocheg/iOS/Projects/TONApp-Swifty/TONApp/TONApp/Service/Database/UserDefaultsObserver.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "1768D212-5D82-4BEA-AEB5-29357B35C4BD - 93fe9f7cb61feab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TONApp.UserDefaultsObserver.observeValue(forKeyPath: Swift.Optional&lt;Swift.String&gt;, of: Swift.Optional&lt;Any&gt;, change: Swift.Optional&lt;Swift.Dictionary&lt;__C.NSKeyValueChangeKey, Any&gt;&gt;, context: Swift.Optional&lt;Swift.UnsafeMutableRawPointer&gt;) -&gt; ()"
+                  moduleName = "TONApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/aurocheg/iOS/Projects/TONApp-Swifty/TONApp/TONApp/Service/Database/UserDefaultsObserver.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "812">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

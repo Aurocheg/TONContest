@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:WalletUtils/WalletUtils.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WalletEntity/WalletEntity.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WalletUI/WalletUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:SwiftSignalKit/SwiftSignalKit.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:QrCode/QrCode.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TONApp/TONApp.xcodeproj">
+   </FileRef>
+</Workspace>
