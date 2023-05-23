@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class StackView: UIStackView {
     public convenience init(

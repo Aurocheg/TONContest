@@ -17,7 +17,6 @@ protocol ConnectPresenterProtocol: AnyObject {
 
 final class ConnectPresenter {
     weak var view: ConnectViewProtocol!
-    var interactor: ConnectInteractorProtocol!
     var router: ConnectRouterProtocol!
     var domen: String?
     var walletAddress: String?

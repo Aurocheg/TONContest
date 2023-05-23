@@ -7,7 +7,6 @@
 
 import UIKit
 import WalletEntity
-import WalletUtils
 import WalletUI
 
 protocol SettingViewProtocol: AnyObject {}

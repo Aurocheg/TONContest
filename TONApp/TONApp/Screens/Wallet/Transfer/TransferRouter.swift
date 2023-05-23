@@ -20,11 +20,6 @@ final class TransferRouter {
     }
 }
 
-// MARK: - Private methods
-private extension TransferRouter {
-    
-}
-
 // MARK: - TransferRouterProtocol
 extension TransferRouter: TransferRouterProtocol {
     func dismiss() {

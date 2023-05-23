@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletEntity
 
 public final class LockCollectionCell: UICollectionViewCell {

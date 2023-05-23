@@ -11,7 +11,6 @@
 		DE02DB872A0024A6002FB530 /* CameraPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02DB862A0024A6002FB530 /* CameraPresenter.swift */; };
 		DE02DB8B2A0024E6002FB530 /* CameraRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02DB8A2A0024E6002FB530 /* CameraRouter.swift */; };
 		DE02DB8D2A002511002FB530 /* CameraConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE02DB8C2A002511002FB530 /* CameraConfigurator.swift */; };
-		DE0AB45629EC1DF0000CED8C /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0AB45529EC1DF0000CED8C /* String + Extension.swift */; };
 		DE0B4A3C29E5740300B23DF9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B4A3B29E5740300B23DF9 /* MainViewController.swift */; };
 		DE0B4A3E29E5743400B23DF9 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B4A3D29E5743400B23DF9 /* MainPresenter.swift */; };
 		DE0B4A4229E5748500B23DF9 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B4A4129E5748500B23DF9 /* MainRouter.swift */; };
@@ -26,7 +25,6 @@
 		DE2A6F0A29E3DF37002C8AD3 /* ConfirmRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A6F0929E3DF37002C8AD3 /* ConfirmRouter.swift */; };
 		DE2A6F0C29E3DF3C002C8AD3 /* ConfirmConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A6F0B29E3DF3C002C8AD3 /* ConfirmConfigurator.swift */; };
 		DE2A6F0E29E3E2CB002C8AD3 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A6F0D29E3E2CB002C8AD3 /* DatabaseManager.swift */; };
-		DE2A6F1229E3E5B8002C8AD3 /* UserDefaults + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2A6F1129E3E5B8002C8AD3 /* UserDefaults + Extension.swift */; };
 		DE30BB5F29F0803F004B6B9C /* SendConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE30BB5E29F0803F004B6B9C /* SendConfigurator.swift */; };
 		DE3732CA29E6BE5000506B4F /* ImportSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3732C929E6BE5000506B4F /* ImportSuccessViewController.swift */; };
 		DE3732CC29E6BE5700506B4F /* ImportSuccessPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3732CB29E6BE5700506B4F /* ImportSuccessPresenter.swift */; };
@@ -65,8 +63,6 @@
 		DE4C031E2A02EA0E00C3FFDC /* WalletUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C031C2A02EA0E00C3FFDC /* WalletUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE4C03CD2A02EF3400C3FFDC /* WalletEntity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C03CC2A02EF3400C3FFDC /* WalletEntity.framework */; };
 		DE4C03CE2A02EF3400C3FFDC /* WalletEntity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C03CC2A02EF3400C3FFDC /* WalletEntity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DE4C040B2A02F19C00C3FFDC /* WalletUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C040A2A02F19C00C3FFDC /* WalletUtils.framework */; };
-		DE4C040C2A02F19C00C3FFDC /* WalletUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C040A2A02F19C00C3FFDC /* WalletUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE4C04172A02F3C800C3FFDC /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = DE4C04162A02F3C800C3FFDC /* Lottie */; };
 		DE51192929F3EC2000779494 /* EnterConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51192829F3EC2000779494 /* EnterConfirmViewController.swift */; };
 		DE51192B29F3EC5E00779494 /* EnterConfirmPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE51192A29F3EC5E00779494 /* EnterConfirmPresenter.swift */; };
@@ -117,22 +113,12 @@
 		DE9560392A10FA020029D551 /* QrCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE01704D2A0E1C0F00AAC2D9 /* QrCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE96272E29FC065000FCD0E4 /* TransferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96272D29FC065000FCD0E4 /* TransferViewController.swift */; };
 		DE96273029FC069700FCD0E4 /* TransferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96272F29FC069700FCD0E4 /* TransferPresenter.swift */; };
-		DE96273229FC06D800FCD0E4 /* TransferInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96273129FC06D800FCD0E4 /* TransferInteractor.swift */; };
 		DE96273429FC06F600FCD0E4 /* TransferRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96273329FC06F600FCD0E4 /* TransferRouter.swift */; };
 		DE96273629FC071400FCD0E4 /* TransferConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96273529FC071400FCD0E4 /* TransferConfigurator.swift */; };
 		DE973B7129FA4B450008CFC0 /* ConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7029FA4B450008CFC0 /* ConnectViewController.swift */; };
 		DE973B7329FA4B790008CFC0 /* ConnectPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7229FA4B790008CFC0 /* ConnectPresenter.swift */; };
-		DE973B7529FA4B9F0008CFC0 /* ConnectInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7429FA4B9F0008CFC0 /* ConnectInteractor.swift */; };
 		DE973B7729FA4BC30008CFC0 /* ConnectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7629FA4BC30008CFC0 /* ConnectRouter.swift */; };
 		DE973B7929FA4BE10008CFC0 /* ConnectConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7829FA4BE10008CFC0 /* ConnectConfigurator.swift */; };
-		DE973B7E29FA64BA0008CFC0 /* DismissAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7D29FA64BA0008CFC0 /* DismissAnimation.swift */; };
-		DE973B8029FA64D80008CFC0 /* PanelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B7F29FA64D80008CFC0 /* PanelTransition.swift */; };
-		DE973B8229FA64FE0008CFC0 /* PresentAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B8129FA64FE0008CFC0 /* PresentAnimation.swift */; };
-		DE973B8929FA78060008CFC0 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B8829FA78060008CFC0 /* PresentationController.swift */; };
-		DE973B8B29FA78230008CFC0 /* DimmPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B8A29FA78230008CFC0 /* DimmPresentationController.swift */; };
-		DE973B8D29FA78670008CFC0 /* TransitionDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B8C29FA78670008CFC0 /* TransitionDriver.swift */; };
-		DE973B8F29FA78B90008CFC0 /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B8E29FA78B90008CFC0 /* InstantPanGestureRecognizer.swift */; };
-		DE973B9129FA79070008CFC0 /* CGPoint + Velocity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE973B9029FA79070008CFC0 /* CGPoint + Velocity.swift */; };
 		DE9D5E1729CCE610004B43D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D5E1629CCE610004B43D0 /* AppDelegate.swift */; };
 		DE9D5E1929CCE610004B43D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D5E1829CCE610004B43D0 /* SceneDelegate.swift */; };
 		DE9D5E2029CCE611004B43D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9D5E1F29CCE611004B43D0 /* Assets.xcassets */; };
@@ -143,6 +129,7 @@
 		DEC0E57E29FD22BD0067A40C /* CameraPermissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0E57D29FD22BD0067A40C /* CameraPermissionPresenter.swift */; };
 		DEC0E58229FD230F0067A40C /* CameraPermissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0E58129FD230F0067A40C /* CameraPermissionRouter.swift */; };
 		DEC0E58429FD23320067A40C /* CameraPermissionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0E58329FD23320067A40C /* CameraPermissionConfigurator.swift */; };
+		DEC174A12A1D288200926B3D /* ProcessTransactionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC174A02A1D288200926B3D /* ProcessTransactionsManager.swift */; };
 		DEE5D58E29ED7B03001035DE /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D58D29ED7B03001035DE /* SettingViewController.swift */; };
 		DEE5D59029ED7BAE001035DE /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D58F29ED7BAE001035DE /* SettingPresenter.swift */; };
 		DEE5D59429ED7C00001035DE /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D59329ED7C00001035DE /* SettingRouter.swift */; };
@@ -156,7 +143,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DE4C040C2A02F19C00C3FFDC /* WalletUtils.framework in Embed Frameworks */,
 				DE4C03CE2A02EF3400C3FFDC /* WalletEntity.framework in Embed Frameworks */,
 				DE4C031E2A02EA0E00C3FFDC /* WalletUI.framework in Embed Frameworks */,
 				DE9560392A10FA020029D551 /* QrCode.framework in Embed Frameworks */,
@@ -169,12 +155,10 @@
 
 /* Begin PBXFileReference section */
 		DE01704D2A0E1C0F00AAC2D9 /* QrCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = QrCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE01706B2A0E1F2800AAC2D9 /* Display.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Display.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE02DB842A00247E002FB530 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		DE02DB862A0024A6002FB530 /* CameraPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPresenter.swift; sourceTree = "<group>"; };
 		DE02DB8A2A0024E6002FB530 /* CameraRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRouter.swift; sourceTree = "<group>"; };
 		DE02DB8C2A002511002FB530 /* CameraConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraConfigurator.swift; sourceTree = "<group>"; };
-		DE0AB45529EC1DF0000CED8C /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		DE0B4A3B29E5740300B23DF9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DE0B4A3D29E5743400B23DF9 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		DE0B4A4129E5748500B23DF9 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
@@ -184,16 +168,13 @@
 		DE0B4A4C29E5769600B23DF9 /* ImportStartRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportStartRouter.swift; sourceTree = "<group>"; };
 		DE0B4A4E29E576B800B23DF9 /* ImportStartConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportStartConfigurator.swift; sourceTree = "<group>"; };
 		DE0E45722A02F47700477A08 /* SwiftSignalKit */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftSignalKit; path = ../SwiftSignalKit; sourceTree = "<group>"; };
-		DE1891432A135C1D00B48DCB /* AsyncDisplayKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AsyncDisplayKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1EF8582A1BB3F6004E1EE0 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		DE2A6F0329E3DF22002C8AD3 /* ConfirmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		DE2A6F0529E3DF28002C8AD3 /* ConfirmPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPresenter.swift; sourceTree = "<group>"; };
 		DE2A6F0929E3DF37002C8AD3 /* ConfirmRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmRouter.swift; sourceTree = "<group>"; };
 		DE2A6F0B29E3DF3C002C8AD3 /* ConfirmConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmConfigurator.swift; sourceTree = "<group>"; };
 		DE2A6F0D29E3E2CB002C8AD3 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DatabaseManager.swift; path = "../New Group1/DatabaseManager.swift"; sourceTree = "<group>"; };
-		DE2A6F1129E3E5B8002C8AD3 /* UserDefaults + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults + Extension.swift"; sourceTree = "<group>"; };
 		DE30BB5E29F0803F004B6B9C /* SendConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendConfigurator.swift; sourceTree = "<group>"; };
-		DE32D8FF2A0E6FCB0025DE31 /* BuildConfig.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BuildConfig.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3732C929E6BE5000506B4F /* ImportSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSuccessViewController.swift; sourceTree = "<group>"; };
 		DE3732CB29E6BE5700506B4F /* ImportSuccessPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSuccessPresenter.swift; sourceTree = "<group>"; };
 		DE3732CF29E6BE6600506B4F /* ImportSuccessConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportSuccessConfigurator.swift; sourceTree = "<group>"; };
@@ -225,7 +206,7 @@
 		DE45159429F2B7AC00781E8D /* EnterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterRouter.swift; sourceTree = "<group>"; };
 		DE45159629F2B7CE00781E8D /* EnterConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterConfigurator.swift; sourceTree = "<group>"; };
 		DE4533092A15018E007FA8E0 /* KeystoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreManager.swift; sourceTree = "<group>"; };
-		DE45330B2A15055A007FA8E0 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WalletManager.swift; path = "../New Group/WalletManager.swift"; sourceTree = "<group>"; };
+		DE45330B2A15055A007FA8E0 /* WalletManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletManager.swift; sourceTree = "<group>"; };
 		DE4C031C2A02EA0E00C3FFDC /* WalletUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4C03CC2A02EF3400C3FFDC /* WalletEntity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletEntity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4C040A2A02F19C00C3FFDC /* WalletUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,8 +222,6 @@
 		DE52DC3829F84B1A00FD56C7 /* ReceivePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivePresenter.swift; sourceTree = "<group>"; };
 		DE52DC3C29F84B7200FD56C7 /* ReceiveRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveRouter.swift; sourceTree = "<group>"; };
 		DE52DC3E29F84B8B00FD56C7 /* ReceiveConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveConfigurator.swift; sourceTree = "<group>"; };
-		DE5EC5652A03BF68005542F9 /* TonBinding.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TonBinding.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE5EC6CC2A040E8C005542F9 /* WalletCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE78655729FC4F20009A54CC /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		DE78655929FC4F55009A54CC /* TransactionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionPresenter.swift; sourceTree = "<group>"; };
 		DE78655D29FC502E009A54CC /* TransactionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRouter.swift; sourceTree = "<group>"; };
@@ -277,25 +256,14 @@
 		DE88B84329DC238A00E49AC7 /* RecoveryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryConfigurator.swift; sourceTree = "<group>"; };
 		DE88B84529DC23A900E49AC7 /* RecoveryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryRouter.swift; sourceTree = "<group>"; };
 		DE95602A2A10F38C0029D551 /* SwiftSignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE9560542A114C8D0029D551 /* MergeLists.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MergeLists.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE96272D29FC065000FCD0E4 /* TransferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferViewController.swift; sourceTree = "<group>"; };
 		DE96272F29FC069700FCD0E4 /* TransferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferPresenter.swift; sourceTree = "<group>"; };
-		DE96273129FC06D800FCD0E4 /* TransferInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferInteractor.swift; sourceTree = "<group>"; };
 		DE96273329FC06F600FCD0E4 /* TransferRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferRouter.swift; sourceTree = "<group>"; };
 		DE96273529FC071400FCD0E4 /* TransferConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferConfigurator.swift; sourceTree = "<group>"; };
 		DE973B7029FA4B450008CFC0 /* ConnectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectViewController.swift; sourceTree = "<group>"; };
 		DE973B7229FA4B790008CFC0 /* ConnectPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectPresenter.swift; sourceTree = "<group>"; };
-		DE973B7429FA4B9F0008CFC0 /* ConnectInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectInteractor.swift; sourceTree = "<group>"; };
 		DE973B7629FA4BC30008CFC0 /* ConnectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectRouter.swift; sourceTree = "<group>"; };
 		DE973B7829FA4BE10008CFC0 /* ConnectConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectConfigurator.swift; sourceTree = "<group>"; };
-		DE973B7D29FA64BA0008CFC0 /* DismissAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimation.swift; sourceTree = "<group>"; };
-		DE973B7F29FA64D80008CFC0 /* PanelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelTransition.swift; sourceTree = "<group>"; };
-		DE973B8129FA64FE0008CFC0 /* PresentAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentAnimation.swift; sourceTree = "<group>"; };
-		DE973B8829FA78060008CFC0 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
-		DE973B8A29FA78230008CFC0 /* DimmPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimmPresentationController.swift; sourceTree = "<group>"; };
-		DE973B8C29FA78670008CFC0 /* TransitionDriver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDriver.swift; sourceTree = "<group>"; };
-		DE973B8E29FA78B90008CFC0 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		DE973B9029FA79070008CFC0 /* CGPoint + Velocity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint + Velocity.swift"; sourceTree = "<group>"; };
 		DE9D5E1329CCE610004B43D0 /* TONApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TONApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9D5E1629CCE610004B43D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9D5E1829CCE610004B43D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -307,7 +275,7 @@
 		DEC0E57D29FD22BD0067A40C /* CameraPermissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionPresenter.swift; sourceTree = "<group>"; };
 		DEC0E58129FD230F0067A40C /* CameraPermissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionRouter.swift; sourceTree = "<group>"; };
 		DEC0E58329FD23320067A40C /* CameraPermissionConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionConfigurator.swift; sourceTree = "<group>"; };
-		DEC478CB2A0A4FC900D57677 /* WalletUrl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUrl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC174A02A1D288200926B3D /* ProcessTransactionsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessTransactionsManager.swift; sourceTree = "<group>"; };
 		DEE5D58D29ED7B03001035DE /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		DEE5D58F29ED7BAE001035DE /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		DEE5D59329ED7C00001035DE /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
@@ -319,7 +287,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE4C040B2A02F19C00C3FFDC /* WalletUtils.framework in Frameworks */,
 				DE9F84812A1A255E005F3F03 /* SwiftSignalKit.framework in Frameworks */,
 				DE4C03CD2A02EF3400C3FFDC /* WalletEntity.framework in Frameworks */,
 				DE4C031D2A02EA0E00C3FFDC /* WalletUI.framework in Frameworks */,
@@ -336,15 +303,8 @@
 			isa = PBXGroup;
 			children = (
 				DE9F84802A1A255E005F3F03 /* SwiftSignalKit.framework */,
-				DE1891432A135C1D00B48DCB /* AsyncDisplayKit.framework */,
-				DE9560542A114C8D0029D551 /* MergeLists.framework */,
 				DE95602A2A10F38C0029D551 /* SwiftSignalKit.framework */,
-				DE32D8FF2A0E6FCB0025DE31 /* BuildConfig.framework */,
-				DE01706B2A0E1F2800AAC2D9 /* Display.framework */,
 				DE01704D2A0E1C0F00AAC2D9 /* QrCode.framework */,
-				DEC478CB2A0A4FC900D57677 /* WalletUrl.framework */,
-				DE5EC6CC2A040E8C005542F9 /* WalletCore.framework */,
-				DE5EC5652A03BF68005542F9 /* TonBinding.framework */,
 				DE0E45722A02F47700477A08 /* SwiftSignalKit */,
 				DE4C040A2A02F19C00C3FFDC /* WalletUtils.framework */,
 				DE4C03CC2A02EF3400C3FFDC /* WalletEntity.framework */,
@@ -475,15 +435,6 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		DE3C2D0629CE07B2003324C7 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				DE973B7C29FA64B00008CFC0 /* Transition */,
-				DE3C2D0829CE07C4003324C7 /* Extensions */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		DE3C2D0729CE07BD003324C7 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,18 +442,9 @@
 				DE8B9E942A16A31D0082A7C9 /* TON */,
 				DE8842B129DACD490051EE84 /* LottieManager.swift */,
 				DE1EF8582A1BB3F6004E1EE0 /* AuthManager.swift */,
+				DEC174A02A1D288200926B3D /* ProcessTransactionsManager.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		DE3C2D0829CE07C4003324C7 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				DE2A6F1129E3E5B8002C8AD3 /* UserDefaults + Extension.swift */,
-				DE0AB45529EC1DF0000CED8C /* String + Extension.swift */,
-				DE973B9029FA79070008CFC0 /* CGPoint + Velocity.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		DE3C2D0929CE07CC003324C7 /* Core */ = {
@@ -698,8 +640,8 @@
 		DE8B9E942A16A31D0082A7C9 /* TON */ = {
 			isa = PBXGroup;
 			children = (
-				DE4533092A15018E007FA8E0 /* KeystoreManager.swift */,
 				DE45330B2A15055A007FA8E0 /* WalletManager.swift */,
+				DE4533092A15018E007FA8E0 /* KeystoreManager.swift */,
 			);
 			path = TON;
 			sourceTree = "<group>";
@@ -709,7 +651,6 @@
 			children = (
 				DE96272D29FC065000FCD0E4 /* TransferViewController.swift */,
 				DE96272F29FC069700FCD0E4 /* TransferPresenter.swift */,
-				DE96273129FC06D800FCD0E4 /* TransferInteractor.swift */,
 				DE96273329FC06F600FCD0E4 /* TransferRouter.swift */,
 				DE96273529FC071400FCD0E4 /* TransferConfigurator.swift */,
 			);
@@ -721,33 +662,10 @@
 			children = (
 				DE973B7029FA4B450008CFC0 /* ConnectViewController.swift */,
 				DE973B7229FA4B790008CFC0 /* ConnectPresenter.swift */,
-				DE973B7429FA4B9F0008CFC0 /* ConnectInteractor.swift */,
 				DE973B7629FA4BC30008CFC0 /* ConnectRouter.swift */,
 				DE973B7829FA4BE10008CFC0 /* ConnectConfigurator.swift */,
 			);
 			path = Connect;
-			sourceTree = "<group>";
-		};
-		DE973B7C29FA64B00008CFC0 /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-				DE973B8729FA77FB0008CFC0 /* PresentationController */,
-				DE973B7D29FA64BA0008CFC0 /* DismissAnimation.swift */,
-				DE973B7F29FA64D80008CFC0 /* PanelTransition.swift */,
-				DE973B8129FA64FE0008CFC0 /* PresentAnimation.swift */,
-				DE973B8C29FA78670008CFC0 /* TransitionDriver.swift */,
-				DE973B8E29FA78B90008CFC0 /* InstantPanGestureRecognizer.swift */,
-			);
-			path = Transition;
-			sourceTree = "<group>";
-		};
-		DE973B8729FA77FB0008CFC0 /* PresentationController */ = {
-			isa = PBXGroup;
-			children = (
-				DE973B8829FA78060008CFC0 /* PresentationController.swift */,
-				DE973B8A29FA78230008CFC0 /* DimmPresentationController.swift */,
-			);
-			path = PresentationController;
 			sourceTree = "<group>";
 		};
 		DE9D5E0A29CCE610004B43D0 = {
@@ -770,7 +688,6 @@
 		DE9D5E1529CCE610004B43D0 /* TONApp */ = {
 			isa = PBXGroup;
 			children = (
-				DE3C2D0629CE07B2003324C7 /* Utils */,
 				DE3C2D0A29CE07D4003324C7 /* Resourses */,
 				DE3C2D0929CE07CC003324C7 /* Core */,
 				DE3C2D0729CE07BD003324C7 /* Service */,
@@ -916,25 +833,20 @@
 				DE0B4A4F29E576B800B23DF9 /* ImportStartConfigurator.swift in Sources */,
 				DEC0E58229FD230F0067A40C /* CameraPermissionRouter.swift in Sources */,
 				DE3732CA29E6BE5000506B4F /* ImportSuccessViewController.swift in Sources */,
-				DE973B8D29FA78670008CFC0 /* TransitionDriver.swift in Sources */,
 				DE3C056F29F9336B00F43A9D /* LockPresenter.swift in Sources */,
-				DE0AB45629EC1DF0000CED8C /* String + Extension.swift in Sources */,
 				DEC0E57C29FD22860067A40C /* CameraPermissionViewController.swift in Sources */,
 				DE88B83329DC110A00E49AC7 /* CongratsViewController.swift in Sources */,
 				DE7BF72829E030A900338D4B /* PasscodeRouter.swift in Sources */,
-				DE973B8929FA78060008CFC0 /* PresentationController.swift in Sources */,
 				DE2A6F0429E3DF22002C8AD3 /* ConfirmViewController.swift in Sources */,
 				DE3C056D29F9333600F43A9D /* LockViewController.swift in Sources */,
 				DE88B83E29DC189900E49AC7 /* RecoveryViewController.swift in Sources */,
 				DE45159529F2B7AC00781E8D /* EnterRouter.swift in Sources */,
 				DE45159129F2B76B00781E8D /* EnterPresenter.swift in Sources */,
-				DE973B9129FA79070008CFC0 /* CGPoint + Velocity.swift in Sources */,
 				DE52DC3929F84B1A00FD56C7 /* ReceivePresenter.swift in Sources */,
 				DE52DC3D29F84B7200FD56C7 /* ReceiveRouter.swift in Sources */,
 				DE7BF70F29E004BA00338D4B /* TestViewController.swift in Sources */,
 				DE30BB5F29F0803F004B6B9C /* SendConfigurator.swift in Sources */,
 				DE88B83529DC114000E49AC7 /* CongratsPresenter.swift in Sources */,
-				DE973B7529FA4B9F0008CFC0 /* ConnectInteractor.swift in Sources */,
 				DE78655829FC4F20009A54CC /* TransactionViewController.swift in Sources */,
 				DE3732CC29E6BE5700506B4F /* ImportSuccessPresenter.swift in Sources */,
 				DE88B83929DC127B00E49AC7 /* CongratsConfigurator.swift in Sources */,
@@ -945,10 +857,9 @@
 				DE7BF71729E0057000338D4B /* TestRouter.swift in Sources */,
 				DE3732D029E6BE6600506B4F /* ImportSuccessConfigurator.swift in Sources */,
 				DE88B84029DC230200E49AC7 /* RecoveryPresenter.swift in Sources */,
-				DE973B8B29FA78230008CFC0 /* DimmPresentationController.swift in Sources */,
 				DE37E6C129E43254003BF346 /* BiometryRouter.swift in Sources */,
 				DE02DB8B2A0024E6002FB530 /* CameraRouter.swift in Sources */,
-				DE973B8229FA64FE0008CFC0 /* PresentAnimation.swift in Sources */,
+				DEC174A12A1D288200926B3D /* ProcessTransactionsManager.swift in Sources */,
 				DE3C2D1C29CE0C49003324C7 /* StartPresenter.swift in Sources */,
 				DE1EF8592A1BB3F6004E1EE0 /* AuthManager.swift in Sources */,
 				DE973B7929FA4BE10008CFC0 /* ConnectConfigurator.swift in Sources */,
@@ -964,17 +875,14 @@
 				DE973B7729FA4BC30008CFC0 /* ConnectRouter.swift in Sources */,
 				DE0B4A4929E5764000B23DF9 /* ImportStartPresenter.swift in Sources */,
 				DE7BF72629E030A500338D4B /* PasscodeConfigurator.swift in Sources */,
-				DE973B7E29FA64BA0008CFC0 /* DismissAnimation.swift in Sources */,
 				DE9D5E1729CCE610004B43D0 /* AppDelegate.swift in Sources */,
 				DE02DB852A00247E002FB530 /* CameraViewController.swift in Sources */,
 				DE0B4A3E29E5743400B23DF9 /* MainPresenter.swift in Sources */,
 				DE3732D229E6BE6E00506B4F /* ImportSuccessRouter.swift in Sources */,
-				DE2A6F1229E3E5B8002C8AD3 /* UserDefaults + Extension.swift in Sources */,
 				DE9D5E1929CCE610004B43D0 /* SceneDelegate.swift in Sources */,
 				DE88B84429DC238A00E49AC7 /* RecoveryConfigurator.swift in Sources */,
 				DE52DC3729F84AE400FD56C7 /* ReceiveViewController.swift in Sources */,
 				DE3732DA29E6BE9900506B4F /* ImportBadConfigurator.swift in Sources */,
-				DE973B8029FA64D80008CFC0 /* PanelTransition.swift in Sources */,
 				DE52DC2E29F8284700FD56C7 /* SendingPresenter.swift in Sources */,
 				DE96273629FC071400FCD0E4 /* TransferConfigurator.swift in Sources */,
 				DE2A6F0C29E3DF3C002C8AD3 /* ConfirmConfigurator.swift in Sources */,
@@ -1001,7 +909,6 @@
 				DE02DB872A0024A6002FB530 /* CameraPresenter.swift in Sources */,
 				DE51192B29F3EC5E00779494 /* EnterConfirmPresenter.swift in Sources */,
 				DE37E6D629E435B7003BF346 /* ReadyRouter.swift in Sources */,
-				DE973B8F29FA78B90008CFC0 /* InstantPanGestureRecognizer.swift in Sources */,
 				DEC0E58429FD23320067A40C /* CameraPermissionConfigurator.swift in Sources */,
 				DE45159729F2B7CE00781E8D /* EnterConfigurator.swift in Sources */,
 				DE8842B229DACD490051EE84 /* LottieManager.swift in Sources */,
@@ -1012,7 +919,6 @@
 				DEE5D58E29ED7B03001035DE /* SettingViewController.swift in Sources */,
 				DE3C057329F933B600F43A9D /* LockRouter.swift in Sources */,
 				DE2A6F0A29E3DF37002C8AD3 /* ConfirmRouter.swift in Sources */,
-				DE96273229FC06D800FCD0E4 /* TransferInteractor.swift in Sources */,
 				DE0B4A4229E5748500B23DF9 /* MainRouter.swift in Sources */,
 				DE52DC2C29F8281C00FD56C7 /* SendingViewController.swift in Sources */,
 			);

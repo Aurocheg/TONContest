@@ -6,31 +6,28 @@
 //
 
 import Foundation
+import WalletEntity
 
 protocol DatabaseManagerProtocol: AnyObject {
     func saveWords(_ words: [String])
-    func getWords() -> [String]?
-    
+    func saveCurrentCurrency(currency: String)
     func saveFaceIdState(_ isOn: Bool)
     func saveCurrentContract(contract: String)
-    func saveIsV3R2Enabled(_ isEnabled: Bool)
-    func saveIsV3R1Enabled(_ isEnabled: Bool)
-
-    func saveCurrentCurrency(currency: String)
     func saveIsNotificationsEnabled(_ isEnabled: Bool)
-    
-    func getCurrentCurrency() -> String?
-    func getCurrentContract() -> String?
-    func getFaceIdState() -> Bool?
-    func getIsNotificationsEnabled() -> Bool?
-    
     func savePassword(password: [String])
     func saveAppState(isWalletCreated: Bool)
     func saveTempDeepLink(_ string: String)
-    func deleteTempDeepLink()
+    
+    func getWords() -> [String]?
+    func getCurrentCurrency() -> String?
+    func getFaceIdState() -> Bool?
+    func getCurrentContract() -> String?
+    func getIsNotificationsEnabled() -> Bool?
     func getPassword() -> [String]?
     func getAppState() -> Bool?
     func getTempDeepLink() -> String?
+    
+    func deleteTempDeepLink()
 }
 
 final class DatabaseManager {

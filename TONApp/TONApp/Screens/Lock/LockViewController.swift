@@ -7,7 +7,6 @@
 
 import UIKit
 import WalletUI
-import WalletUtils
 
 enum LockType {
     case beforeSending(String, String, String)

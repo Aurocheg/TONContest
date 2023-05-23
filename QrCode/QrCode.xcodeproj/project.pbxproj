@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		DE9F84712A1A22A5005F3F03 /* WalletUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9F84702A1A22A5005F3F03 /* WalletUI.framework */; };
 		DE9F84722A1A22A5005F3F03 /* WalletUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE9F84702A1A22A5005F3F03 /* WalletUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DE9F847B2A1A2416005F3F03 /* WalletUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9F847A2A1A2416005F3F03 /* WalletUtils.framework */; };
-		DE9F847C2A1A2416005F3F03 /* WalletUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE9F847A2A1A2416005F3F03 /* WalletUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEC27E1B2A1A218400DBD0CA /* SwiftSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEC27E1A2A1A218400DBD0CA /* SwiftSignalKit.framework */; };
 		DEC27E1C2A1A218400DBD0CA /* SwiftSignalKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEC27E1A2A1A218400DBD0CA /* SwiftSignalKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEEB39562A19586600532E7B /* QrCode.docc in Sources */ = {isa = PBXBuildFile; fileRef = DEEB39552A19586600532E7B /* QrCode.docc */; };
@@ -27,7 +25,6 @@
 			files = (
 				DEC27E1C2A1A218400DBD0CA /* SwiftSignalKit.framework in Embed Frameworks */,
 				DE9F84722A1A22A5005F3F03 /* WalletUI.framework in Embed Frameworks */,
-				DE9F847C2A1A2416005F3F03 /* WalletUtils.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -51,7 +48,6 @@
 			files = (
 				DEC27E1B2A1A218400DBD0CA /* SwiftSignalKit.framework in Frameworks */,
 				DE9F84712A1A22A5005F3F03 /* WalletUI.framework in Frameworks */,
-				DE9F847B2A1A2416005F3F03 /* WalletUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

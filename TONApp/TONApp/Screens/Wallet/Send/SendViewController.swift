@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletUI
 
 protocol SendViewProtocol: AnyObject {
@@ -22,6 +21,7 @@ final class SendViewController: UIViewController {
     
     private var deepLinkAddress: String?
         
+    private let recentReuseIdentifier = "RecentTableViewCell"
     private let placeholderText = "Enter Wallet Address or Domain..."
     
     private lazy var continueBottomConstraint = continueButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
@@ -156,7 +156,7 @@ private extension SendViewController {
         
         presenter.getRecentTransactions()
         
-        recentTableView.register(UITableViewCell.self, forCellReuseIdentifier: "RecentTableCell")
+        recentTableView.register(UITableViewCell.self, forCellReuseIdentifier: recentReuseIdentifier)
         recentTableView.delegate = self
         recentTableView.dataSource = self
         
@@ -241,7 +241,7 @@ extension SendViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecentTableCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: recentReuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
         
         let currentTransaction = presenter.recentTransactions?[indexPath.row]

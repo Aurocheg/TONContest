@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class SeparatorView: UIView {
     public convenience init() {

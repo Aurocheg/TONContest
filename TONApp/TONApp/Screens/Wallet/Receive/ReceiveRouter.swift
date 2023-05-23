@@ -21,11 +21,6 @@ final class ReceiveRouter {
     }
 }
 
-// MARK: - Private methods
-private extension ReceiveRouter {
-    
-}
-
 // MARK: - ReceiveRouterProtocol
 extension ReceiveRouter: ReceiveRouterProtocol {
     func dismiss() {

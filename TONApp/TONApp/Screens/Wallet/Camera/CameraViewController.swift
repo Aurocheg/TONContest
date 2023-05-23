@@ -5,11 +5,10 @@
 //  Created by Aurocheg on 1.05.23.
 //
 
-import UIKit
 import Foundation
-import WalletUI
-import WalletUtils
 import AVFoundation
+import UIKit
+import WalletUI
 
 protocol CameraViewProtocol: AnyObject {
     

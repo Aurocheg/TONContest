@@ -7,7 +7,6 @@
 
 import UIKit
 import Lottie
-import WalletUtils
 import WalletUI
 
 protocol CongratsViewProtocol: AnyObject {}

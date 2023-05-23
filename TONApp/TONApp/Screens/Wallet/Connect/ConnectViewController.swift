@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletUI
 
 enum ConnectViewState {

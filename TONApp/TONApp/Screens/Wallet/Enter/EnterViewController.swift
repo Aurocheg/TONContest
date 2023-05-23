@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletUI
 import Lottie
 import SwiftyTON
@@ -240,10 +239,10 @@ private extension EnterViewController {
         
         if doubleValue ?? 0 > presenter.balance ?? 0 {
             sender.textColor = ThemeColors.systemRed
-            wrongLabel.transitionElement(with: wrongLabel, duration: 0.3, alpha: 1)
+            wrongLabel.transitionElement(duration: 0.3, alpha: 1)
         } else {
             sender.textColor = ThemeColors.textPrimary
-            wrongLabel.transitionElement(with: wrongLabel, duration: 0.3, alpha: 0)
+            wrongLabel.transitionElement(duration: 0.3, alpha: 0)
         }
     }
     
@@ -283,8 +282,8 @@ extension EnterViewController: EnterViewProtocol {
         
         sendAllLabel.attributedText = textString
         
-        sendAllLabel.transitionElement(with: sendAllLabel, duration: 0.2, alpha: 1)
-        sendAllSwitch.transitionElement(with: sendAllSwitch, duration: 0.2, alpha: 1)
+        sendAllLabel.transitionElement(duration: 0.2, alpha: 1)
+        sendAllSwitch.transitionElement(duration: 0.2, alpha: 1)
     }
 }
 

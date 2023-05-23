@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class TitleLabel: UILabel {
     public init(

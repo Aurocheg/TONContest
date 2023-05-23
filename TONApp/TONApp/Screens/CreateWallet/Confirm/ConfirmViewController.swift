@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletUI
 import Lottie
 
@@ -34,7 +33,7 @@ final class ConfirmViewController: UIViewController {
     // MARK: - UI Elements
     private lazy var passcodeView: LottieAnimationView = {
         let view = LottieAnimationView()
-        lottieManager.applyAnimationWithProgress(for: view, lottieType: .password, toProgress: 0.5)
+        lottieManager.applyAnimation(for: view, lottieType: .password, toProgress: 0.5)
         return view
     }()
     private let titleLabel = TitleLabel(text: "Confirm a Passcode")

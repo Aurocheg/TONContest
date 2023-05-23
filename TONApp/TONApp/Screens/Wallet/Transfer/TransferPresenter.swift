@@ -17,7 +17,6 @@ protocol TransferPresenterProtocol: AnyObject {
 
 final class TransferPresenter {
     weak var view: TransferViewProtocol!
-    var interactor: TransferInteractorProtocol!
     var router: TransferRouterProtocol!
     var recipientAddress: String?
     var fee: String?

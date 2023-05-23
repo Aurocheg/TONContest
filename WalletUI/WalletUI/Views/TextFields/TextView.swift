@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class TextView: UITextView {
     public convenience init(

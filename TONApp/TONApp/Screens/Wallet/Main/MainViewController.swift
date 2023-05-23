@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletUI
 import WalletEntity
 import Lottie
@@ -36,10 +35,6 @@ final class MainViewController: UIViewController {
     private var isContentViewPinnedToTop = false
             
     // MARK: Constraints
-    private lazy var coinStackLoadingTopConstraint = balanceStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 52)
-    private var coinStackCreatedTopConstraint: NSLayoutConstraint {
-        return balanceStackView.topAnchor.constraint(equalTo: balanceLabel.bottomAnchor, constant: 2)
-    }
     private lazy var contentDefaultTopConstraint = contentView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 16)
     private lazy var contentPinnedTopConstraint = contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
     
@@ -91,14 +86,7 @@ final class MainViewController: UIViewController {
         return button
     }()
     
-    private let contentView: UIView = {
-        let view = UIView()
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 15
-        view.backgroundColor = .white
-        view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        return view
-    }()
+    private let contentView = MainContentView()
     
     private lazy var loadingView: LottieAnimationView = {
         let view = LottieAnimationView()
@@ -223,7 +211,7 @@ private extension MainViewController {
         guard let createdView = createdView else { return }
         createdView.loopMode = .playOnce
         createdView.alpha = 0
-        lottieManager.applyAnimationWithProgress(for: createdView, lottieType: .created, toProgress: 0.7)
+        lottieManager.applyAnimation(for: createdView, lottieType: .created, toProgress: 0.7)
         contentView.addSubview(createdView)
         
         createdView.translatesAutoresizingMaskIntoConstraints = false
@@ -351,22 +339,22 @@ extension MainViewController: MainViewProtocol {
     func configureViews(with state: MainViewState) {
         switch state {
         case .loading:
-            loadingView.transitionElement(with: loadingView, duration: 0.2, alpha: 1)
+            loadingView.transitionElement(duration: 0.2, alpha: 1)
         case .created:
-            loadingView.transitionElement(with: loadingView, duration: 0.2, alpha: 0)
-            addressLabel.transitionElement(with: addressLabel, duration: 0.2, alpha: 1)
-            balanceLabel.transitionElement(with: balanceLabel, duration: 0.2, alpha: 1)
+            loadingView.transitionElement(duration: 0.2, alpha: 0)
+            addressLabel.transitionElement(duration: 0.2, alpha: 1)
+            balanceLabel.transitionElement(duration: 0.2, alpha: 1)
             makeCreatedElements()
             animateCreatedElementsAlpha(to: 1)
         case .transactions:
             isTransactionsEnabled = true
-            loadingView.transitionElement(with: loadingView, duration: 0.2, alpha: 0)
-            addressLabel.transitionElement(with: addressLabel, duration: 0.2, alpha: 1)
-            balanceLabel.transitionElement(with: balanceLabel, duration: 0.2, alpha: 1)
+            loadingView.transitionElement(duration: 0.2, alpha: 0)
+            addressLabel.transitionElement(duration: 0.2, alpha: 1)
+            balanceLabel.transitionElement(duration: 0.2, alpha: 1)
             if transactionsTableView == nil {
                 makeTableView()
             }
-            transactionsTableView?.transitionElement(with: transactionsTableView, duration: 0.2, alpha: 1)
+            transactionsTableView?.transitionElement(duration: 0.2, alpha: 1)
         }
     }
     
@@ -427,7 +415,7 @@ extension MainViewController: MainViewProtocol {
     }
     
     func animateCreatedElementsAlpha(to: CGFloat) {
-        createdElements.forEach { $0?.transitionElement(with: $0, duration: 0.2, alpha: to) }
+        createdElements.forEach { $0?.transitionElement(duration: 0.2, alpha: to) }
     }
     
     func reloadTransactions() {

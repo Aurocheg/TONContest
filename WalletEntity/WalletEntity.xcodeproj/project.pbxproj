@@ -13,24 +13,10 @@
 		DE4C03C92A02EE4C00C3FFDC /* SettingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C03C52A02EE4C00C3FFDC /* SettingEntity.swift */; };
 		DE4C03CA2A02EE4C00C3FFDC /* TransactionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C03C62A02EE4C00C3FFDC /* TransactionEntity.swift */; };
 		DE4C03CB2A02EE4C00C3FFDC /* LockEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C03C72A02EE4C00C3FFDC /* LockEntity.swift */; };
-		DE4C040F2A02F1A900C3FFDC /* WalletUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C040E2A02F1A900C3FFDC /* WalletUtils.framework */; };
-		DE4C04102A02F1A900C3FFDC /* WalletUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C040E2A02F1A900C3FFDC /* WalletUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DE9F84882A1A468A005F3F03 /* SwiftyTON in Frameworks */ = {isa = PBXBuildFile; productRef = DE9F84872A1A468A005F3F03 /* SwiftyTON */; };
+		DEC1749C2A1D097D00926B3D /* ContractConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1749B2A1D097D00926B3D /* ContractConstants.swift */; };
+		DEC1749E2A1D09A500926B3D /* CurrencyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1749D2A1D09A500926B3D /* CurrencyConstants.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		DE4C04112A02F1A900C3FFDC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				DE4C04102A02F1A900C3FFDC /* WalletUtils.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE4C03B82A02EE0F00C3FFDC /* WalletEntity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WalletEntity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,6 +27,9 @@
 		DE4C03C62A02EE4C00C3FFDC /* TransactionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionEntity.swift; sourceTree = "<group>"; };
 		DE4C03C72A02EE4C00C3FFDC /* LockEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockEntity.swift; sourceTree = "<group>"; };
 		DE4C040E2A02F1A900C3FFDC /* WalletUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEC1749B2A1D097D00926B3D /* ContractConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractConstants.swift; sourceTree = "<group>"; };
+		DEC1749D2A1D09A500926B3D /* CurrencyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConstants.swift; sourceTree = "<group>"; };
+		DEC174CC2A1D2E3500926B3D /* WalletUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +38,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE9F84882A1A468A005F3F03 /* SwiftyTON in Frameworks */,
-				DE4C040F2A02F1A900C3FFDC /* WalletUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +64,7 @@
 		DE4C03BA2A02EE0F00C3FFDC /* WalletEntity */ = {
 			isa = PBXGroup;
 			children = (
+				DEC1749F2A1D09A800926B3D /* Constants */,
 				DE4C03C72A02EE4C00C3FFDC /* LockEntity.swift */,
 				DE4C03C42A02EE4C00C3FFDC /* RecentTransactionEntity.swift */,
 				DE4C03C52A02EE4C00C3FFDC /* SettingEntity.swift */,
@@ -89,9 +78,19 @@
 		DE4C040D2A02F1A900C3FFDC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DEC174CC2A1D2E3500926B3D /* WalletUI.framework */,
 				DE4C040E2A02F1A900C3FFDC /* WalletUtils.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEC1749F2A1D09A800926B3D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				DEC1749D2A1D09A500926B3D /* CurrencyConstants.swift */,
+				DEC1749B2A1D097D00926B3D /* ContractConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,7 +115,6 @@
 				DE4C03B42A02EE0F00C3FFDC /* Sources */,
 				DE4C03B52A02EE0F00C3FFDC /* Frameworks */,
 				DE4C03B62A02EE0F00C3FFDC /* Resources */,
-				DE4C04112A02F1A900C3FFDC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,6 +178,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC1749C2A1D097D00926B3D /* ContractConstants.swift in Sources */,
+				DEC1749E2A1D09A500926B3D /* CurrencyConstants.swift in Sources */,
 				DE4C03C82A02EE4C00C3FFDC /* RecentTransactionEntity.swift in Sources */,
 				DE4C03CA2A02EE4C00C3FFDC /* TransactionEntity.swift in Sources */,
 				DE4C03BD2A02EE0F00C3FFDC /* WalletEntity.docc in Sources */,

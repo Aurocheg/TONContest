@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class BackgroundButton: UIButton {
     private var circularIndicatorView: CircularIndicatorView?

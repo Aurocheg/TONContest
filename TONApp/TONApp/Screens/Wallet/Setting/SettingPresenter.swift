@@ -14,11 +14,14 @@ protocol SettingPresenterProtocol: AnyObject {
     var currentContract: String? { get }
     var currentCurrency: String? { get }
     var isFaceIdEstablished: Bool? { get }
+    
     func configureSettingsIfPossible()
     func getSettings()
+    
     func closeButtonTapped()
     func recoveryPhraseTapped()
     func changePasscodeTapped()
+    
     func switchChanged(_ type: SettingSwitchType, isOn: Bool)
     func pickerChanged(_ type: SettingPickerType, title: String)
 }
@@ -131,16 +134,6 @@ extension SettingPresenter: SettingPresenterProtocol {
             print(title)
             databaseManager.saveCurrentContract(contract: title)
             NotificationCenter.default.post(name: contractChangedNotification, object: nil)
-            
-            switch title {
-            case "v3R1":
-                databaseManager.saveIsV3R1Enabled(true)
-            case "v3R2":
-                databaseManager.saveIsV3R2Enabled(true)
-            default:
-                break
-            }
-    
         case .currency:
             databaseManager.saveCurrentCurrency(currency: title)
         }

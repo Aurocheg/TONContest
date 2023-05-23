@@ -7,7 +7,6 @@
 
 import WalletEntity
 import WalletUI
-import WalletUtils
 import AVFoundation
 import SwiftyTON
 
@@ -32,13 +31,14 @@ final class MainPresenter {
     weak var view: MainViewProtocol!
     public var router: MainRouterProtocol!
     public var databaseManager: DatabaseManagerProtocol!
+    public var processTransactionsManager: ProcessTransactionsManagerProtocol!
     
     public var transactions: [TransactionEntity] = []
     public var address: String?
     public var balance: Double?
     
     private let walletManager = WalletManager.shared
-    
+
     required init(view: MainViewProtocol) {
         self.view = view
     }
@@ -54,13 +54,13 @@ private extension MainPresenter {
             
             if let currentContract = databaseManager.getCurrentContract() {
                 switch currentContract {
-                case "v4R2":
+                case ContractConstants.v4R2.rawValue:
                     wallet = try await walletManager.getWallet4(key: key, revision: .r2)
                     try await KeystoreManager.shared.save(wallet4: wallet as! Wallet4)
-                case "v3R2":
+                case ContractConstants.v3R2.rawValue:
                     wallet = try await walletManager.getWallet3(key: key, revision: .r2)
                     try await KeystoreManager.shared.save(wallet3: wallet as! Wallet3)
-                case "v3R1":
+                case ContractConstants.v3R1.rawValue:
                     wallet = try await walletManager.getWallet3(key: key, revision: .r1)
                     try await KeystoreManager.shared.save(wallet3: wallet as! Wallet3)
                 default:
@@ -75,37 +75,14 @@ private extension MainPresenter {
             balance = Double(wallet.contract.info.balance.string(with: .maximum9minimum9))
             
             if let lastTransactionID = wallet.contract.info.lastTransactionID {
-                transactions = distributeTransactionsByDate(
-                    transactions: try await wallet.contract.transactions(startingFrom: lastTransactionID)
+                transactions = processTransactionsManager.distributeTransactionsByDate(
+                    try await wallet.contract.transactions(startingFrom: lastTransactionID)
                 )
                 completion(true)
             } else {
                 completion(false)
             }
-            
         }
-    }
-    
-    func distributeTransactionsByDate(transactions: [Transaction]) -> [TransactionEntity] {
-        var transactionEntities: [TransactionEntity] = []
-        var dateTransactionsMap: [String: [Transaction]] = [:]
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d"
-        
-        for transaction in transactions {
-            let dateString = dateFormatter.string(from: transaction.date)
-            var dateTransactions = dateTransactionsMap[dateString] ?? []
-            dateTransactions.append(transaction)
-            dateTransactionsMap[dateString] = dateTransactions
-        }
-        
-        for (dateString, transactions) in dateTransactionsMap {
-            let transactionEntity = TransactionEntity(date: dateString, transactions: transactions)
-            transactionEntities.append(transactionEntity)
-        }
-        
-        return transactionEntities
     }
 }
 
@@ -144,7 +121,7 @@ extension MainPresenter: MainPresenterProtocol {
         switch authorizationStatus {
         case .authorized:
             self.router.showCamera()
-        case .notDetermined: // Разрешение еще не запрашивалось
+        case .notDetermined:
             AVCaptureDevice.requestAccess(for: .video) { granted in
                 if granted {
                     self.router.showCamera()

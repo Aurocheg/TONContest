@@ -10,7 +10,7 @@ import Lottie
 
 protocol LottieManagerProtocol {
     func applyAnimation(for view: LottieAnimationView, lottieType: LottieManager.Files)
-    func applyAnimationWithProgress(for view: LottieAnimationView, lottieType: LottieManager.Files, toProgress: CGFloat)
+    func applyAnimation(for view: LottieAnimationView, lottieType: LottieManager.Files, toProgress: CGFloat)
 }
 
 final class LottieManager {
@@ -65,7 +65,7 @@ extension LottieManager: LottieManagerProtocol {
         view.play()
     }
     
-    func applyAnimationWithProgress(for view: LottieAnimationView, lottieType: Files, toProgress: CGFloat) {
+    func applyAnimation(for view: LottieAnimationView, lottieType: Files, toProgress: CGFloat) {
         guard let path = lottieType.path else { return }
         view.animation = LottieAnimation.filepath(path)
         view.play(fromProgress: .zero, toProgress: toProgress, loopMode: .playOnce)

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class LockCircleView: UIView {
     private lazy var fillingView: UIView = {

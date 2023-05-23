@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class NonBackgroundButton: UIButton {
     public enum IconAlignment {

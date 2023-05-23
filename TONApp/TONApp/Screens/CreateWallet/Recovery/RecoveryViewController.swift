@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 import WalletUI
 import Lottie
 
@@ -211,9 +210,9 @@ extension RecoveryViewController: UIScrollViewDelegate {
         let titlePosition = titleLabel.convert(CGPoint.zero, to: titleLabel.superview).y
         
         if scrollOffset >= titlePosition {
-            navigationItem.titleView?.transitionElement(with: navigationItem.titleView, duration: 0.3, alpha: 1)
+            navigationItem.titleView?.transitionElement(duration: 0.3, alpha: 1)
         } else {
-            navigationItem.titleView?.transitionElement(with: navigationItem.titleView, duration: 0.3, alpha: 0)
+            navigationItem.titleView?.transitionElement(duration: 0.3, alpha: 0)
         }
     }
 }

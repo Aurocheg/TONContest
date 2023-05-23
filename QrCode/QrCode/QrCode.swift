@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import WalletUtils
 import WalletUI
 import CoreImage
 import CoreGraphics

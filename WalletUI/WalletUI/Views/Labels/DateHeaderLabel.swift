@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class DateHeaderLabel: UILabel {
     public convenience init(with text: String? = nil, indent: CGFloat = 16) {

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public final class SnackbarView: UIView {
     // MARK: - Properties
@@ -42,7 +41,7 @@ public final class SnackbarView: UIView {
 
 public extension SnackbarView {
     func changeVisibility(to alpha: CGFloat) {
-        transitionElement(with: self, duration: 0.3, alpha: alpha)
+        transitionElement(duration: 0.3, alpha: alpha)
     }
 }
 

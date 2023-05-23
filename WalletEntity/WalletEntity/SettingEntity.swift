@@ -46,17 +46,17 @@ public struct Setting: SettingEntity {
                         settingName: "Active address",
                         configuration: .picker(.contract),
                         pickers: [
-                            SettingPicker(title: "v4R2"),
-                            SettingPicker(title: "v3R2"),
-                            SettingPicker(title: "v3R1")
+                            SettingPicker(title: ContractConstants.v4R2.rawValue),
+                            SettingPicker(title: ContractConstants.v3R2.rawValue),
+                            SettingPicker(title: ContractConstants.v3R1.rawValue)
                         ]
                     ),
                     SettingData(
                         settingName: "Primary currency",
                         configuration: .picker(.currency),
                         pickers: [
-                            SettingPicker(title: "USD"),
-                            SettingPicker(title: "EUR")
+                            SettingPicker(title: CurrencyConstants.dollar.rawValue),
+                            SettingPicker(title: CurrencyConstants.euro.rawValue)
                         ]
                     )
                 ]

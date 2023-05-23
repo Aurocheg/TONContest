@@ -13,11 +13,13 @@ final class MainConfigurator {
         let router = MainRouter(viewController: viewController)
         let lottieManager = LottieManager()
         let databaseManager = DatabaseManager()
+        let processTransactionsManager = ProcessTransactionsManager()
         
         viewController.presenter = presenter
         viewController.lottieManager = lottieManager
         presenter.router = router
         presenter.databaseManager = databaseManager
+        presenter.processTransactionsManager = processTransactionsManager
     }
 }
 

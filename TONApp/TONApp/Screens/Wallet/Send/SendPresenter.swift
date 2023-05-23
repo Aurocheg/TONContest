@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import AVFoundation
 import WalletEntity
 import SwiftyTON
-import AVFoundation
 
 protocol SendPresenterProtocol: AnyObject {
     var recentTransactions: [RecentTransactionEntity]? { get }

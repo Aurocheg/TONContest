@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import WalletUtils
+import WalletUI
 
 protocol CameraRouterProtocol: AnyObject {
     func dismiss()

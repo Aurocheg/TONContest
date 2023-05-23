@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WalletUtils
 
 public enum LockCellConfiguration {
     case number
@@ -14,7 +13,7 @@ public enum LockCellConfiguration {
     case faceId
     case backspace
     
-    static let color = ThemeColors.backgroundContent
+    static let color: UIColor = .white
     
     public var image: UIImage? {
         switch self {
