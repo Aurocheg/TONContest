@@ -49,9 +49,7 @@ private extension MainPresenter {
         Task(priority: .high) {
             guard let key = try await KeystoreManager.shared.loadKey() else { return }
             let wallet: Wallet
-            
-            print(databaseManager.getCurrentContract())
-            
+                        
             if let currentContract = databaseManager.getCurrentContract() {
                 switch currentContract {
                 case ContractConstants.v4R2.rawValue:

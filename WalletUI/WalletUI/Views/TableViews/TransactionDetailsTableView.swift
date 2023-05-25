@@ -10,7 +10,6 @@ import UIKit
 public final class TransactionDetailsTableView: UITableView {
     public convenience init() {
         self.init(frame: .zero, style: .plain)
-        
         isScrollEnabled = false
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false

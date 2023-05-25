@@ -9,7 +9,7 @@ import UIKit
 
 public final class SettingsTableView: UITableView {
     public convenience init() {
-        self.init(frame: .zero, style: .grouped)
+        self.init(frame: .zero, style: .insetGrouped)
         
         showsVerticalScrollIndicator = false
         isScrollEnabled = false

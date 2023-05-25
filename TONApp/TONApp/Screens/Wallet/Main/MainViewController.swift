@@ -35,8 +35,12 @@ final class MainViewController: UIViewController {
     private var isContentViewPinnedToTop = false
             
     // MARK: Constraints
-    private lazy var contentDefaultTopConstraint = contentView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 16)
-    private lazy var contentPinnedTopConstraint = contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+    private var contentDefaultTopConstraint: NSLayoutConstraint {
+        contentView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 16)
+    }
+    private var contentPinnedTopConstraint: NSLayoutConstraint {
+        contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
+    }
     
     // MARK: - UI Elements
     private let balanceStackView = StackView(

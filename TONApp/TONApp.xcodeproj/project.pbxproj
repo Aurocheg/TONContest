@@ -122,7 +122,7 @@
 		DE9D5E1729CCE610004B43D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D5E1629CCE610004B43D0 /* AppDelegate.swift */; };
 		DE9D5E1929CCE610004B43D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9D5E1829CCE610004B43D0 /* SceneDelegate.swift */; };
 		DE9D5E2029CCE611004B43D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE9D5E1F29CCE611004B43D0 /* Assets.xcassets */; };
-		DE9D5E2329CCE611004B43D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE9D5E2129CCE611004B43D0 /* LaunchScreen.storyboard */; };
+		DE9D5E2329CCE611004B43D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE9D5E2129CCE611004B43D0 /* LaunchScreen.xib */; };
 		DE9F84812A1A255E005F3F03 /* SwiftSignalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE9F84802A1A255E005F3F03 /* SwiftSignalKit.framework */; };
 		DE9F84822A1A255E005F3F03 /* SwiftSignalKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE9F84802A1A255E005F3F03 /* SwiftSignalKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEC0E57C29FD22860067A40C /* CameraPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0E57B29FD22860067A40C /* CameraPermissionViewController.swift */; };
@@ -134,6 +134,7 @@
 		DEE5D59029ED7BAE001035DE /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D58F29ED7BAE001035DE /* SettingPresenter.swift */; };
 		DEE5D59429ED7C00001035DE /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D59329ED7C00001035DE /* SettingRouter.swift */; };
 		DEE5D59629ED7C1C001035DE /* SettingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D59529ED7C1C001035DE /* SettingConfigurator.swift */; };
+		DEFB7DE32A1E1EE4003776DA /* PossibleWordListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB7DE22A1E1EE4003776DA /* PossibleWordListManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -268,7 +269,7 @@
 		DE9D5E1629CCE610004B43D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE9D5E1829CCE610004B43D0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		DE9D5E1F29CCE611004B43D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DE9D5E2229CCE611004B43D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE9D5E2229CCE611004B43D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		DE9D5E2429CCE611004B43D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE9F84802A1A255E005F3F03 /* SwiftSignalKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSignalKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC0E57B29FD22860067A40C /* CameraPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPermissionViewController.swift; sourceTree = "<group>"; };
@@ -280,6 +281,7 @@
 		DEE5D58F29ED7BAE001035DE /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		DEE5D59329ED7C00001035DE /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
 		DEE5D59529ED7C1C001035DE /* SettingConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConfigurator.swift; sourceTree = "<group>"; };
+		DEFB7DE22A1E1EE4003776DA /* PossibleWordListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PossibleWordListManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 				DE8842B129DACD490051EE84 /* LottieManager.swift */,
 				DE1EF8582A1BB3F6004E1EE0 /* AuthManager.swift */,
 				DEC174A02A1D288200926B3D /* ProcessTransactionsManager.swift */,
+				DEFB7DE22A1E1EE4003776DA /* PossibleWordListManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -461,7 +464,7 @@
 			children = (
 				DE88429A29DACCA80051EE84 /* Lottie */,
 				DE9D5E1F29CCE611004B43D0 /* Assets.xcassets */,
-				DE9D5E2129CCE611004B43D0 /* LaunchScreen.storyboard */,
+				DE9D5E2129CCE611004B43D0 /* LaunchScreen.xib */,
 			);
 			path = Resourses;
 			sourceTree = "<group>";
@@ -798,7 +801,7 @@
 				DE8842C729DAD0160051EE84 /* recovery_phrase.json in Resources */,
 				DE8842BF29DAD0160051EE84 /* start.json in Resources */,
 				DE8842C329DAD0160051EE84 /* congratulations.json in Resources */,
-				DE9D5E2329CCE611004B43D0 /* LaunchScreen.storyboard in Resources */,
+				DE9D5E2329CCE611004B43D0 /* LaunchScreen.xib in Resources */,
 				DE9D5E2029CCE611004B43D0 /* Assets.xcassets in Resources */,
 				DE8842C829DAD0160051EE84 /* loading.json in Resources */,
 				DE8842C129DAD0160051EE84 /* waiting_ton.json in Resources */,
@@ -871,6 +874,7 @@
 				DE37E6C329E43283003BF346 /* BiometryConfigurator.swift in Sources */,
 				DE88B84629DC23A900E49AC7 /* RecoveryRouter.swift in Sources */,
 				DE0B4A4D29E5769600B23DF9 /* ImportStartRouter.swift in Sources */,
+				DEFB7DE32A1E1EE4003776DA /* PossibleWordListManager.swift in Sources */,
 				DE973B7129FA4B450008CFC0 /* ConnectViewController.swift in Sources */,
 				DE973B7729FA4BC30008CFC0 /* ConnectRouter.swift in Sources */,
 				DE0B4A4929E5764000B23DF9 /* ImportStartPresenter.swift in Sources */,
@@ -927,12 +931,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		DE9D5E2129CCE611004B43D0 /* LaunchScreen.storyboard */ = {
+		DE9D5E2129CCE611004B43D0 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DE9D5E2229CCE611004B43D0 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1076,7 +1080,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Toncoin Wallet needs access to your camera to scan QR codes.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "TON Wallet uses biometric authentication to authorize transactions";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -1120,7 +1124,7 @@
 				INFOPLIST_KEY_NSCameraUsageDescription = "Toncoin Wallet needs access to your camera to scan QR codes.";
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "TON Wallet uses biometric authentication to authorize transactions";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

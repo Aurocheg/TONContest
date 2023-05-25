@@ -60,8 +60,8 @@ private extension SettingViewController {
     func setupLayout() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
@@ -101,20 +101,6 @@ extension SettingViewController: SettingViewProtocol {}
 
 // MARK: - UITableViewDelegate
 extension SettingViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.applyCorners(to: [.topLeft, .topRight], with: view.bounds)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let isLastCell = tableView.numberOfRows(inSection: indexPath.section) - 1 == indexPath.row
-        
-        if isLastCell {
-            cell.applyCorners(to: [.bottomLeft, .bottomRight], with: cell.bounds)
-        } else {
-            cell.removeCorners()
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currentItem = presenter.settings[indexPath.section].data[indexPath.row]
         
@@ -162,7 +148,7 @@ extension SettingViewController: UITableViewDataSource {
             return SettingsTableCell()
         }
         let currentSetting = presenter.settings[indexPath.section].data[indexPath.row]
-                
+                        
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.prefersSideBySideTextAndSecondaryText = true
         

@@ -9,6 +9,7 @@ import UIKit
 import WalletUI
 import WalletEntity
 import SwiftyTON
+import CryptoSwift
 
 protocol TransactionViewProtocol: AnyObject {}
 
@@ -135,13 +136,26 @@ private extension TransactionViewController {
         view.backgroundColor = .white
         view.applyMaskedCorners(with: 10)
         
-        amountLabel.textColor = cellType.sumLabelColor
+        var amount: Double?
+        var fees: Decimal?
         
-        if let value = Double(entity.in?.value.string(with: .maximum9minimum9) ?? "0.0") {
-            amountLabel.configureAttributedString(with: .large, amount: value)
+        switch cellType {
+        case .incoming:
+            amount = Double(entity.in?.value.string(with: .maximum9minimum9) ?? "0.0")
+            fees = entity.in?.fees.value.fromNano()
+        case .outgoing:
+            if !entity.out.isEmpty {
+                amount = Double(entity.out[0].value.string(with: .maximum9minimum9))
+                fees = entity.out[0].fees.value.fromNano()
+            }
         }
         
-        if let fees = entity.in?.fees.value.fromNano() {
+        if let amount = amount {
+            amountLabel.configureAttributedString(with: .large, amount: amount)
+        }
+        amountLabel.textColor = cellType.sumLabelColor
+        
+        if let fees = fees {
             feeLabel.text = "\(fees) transaction fee"
         }
         
@@ -217,6 +231,7 @@ extension TransactionViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableCell") else {
             return UITableViewCell()
         }
+        cell.selectionStyle = .none
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.prefersSideBySideTextAndSecondaryText = true
         contentConfiguration.secondaryTextProperties.font = .systemFont(ofSize: 17)
@@ -227,24 +242,29 @@ extension TransactionViewController: UITableViewDataSource {
             switch indexPath.row {
             case 0:
                 contentConfiguration.text = "Sender address"
-                contentConfiguration.secondaryText = entity.in?.sourceAccountAddress?.displayName.splitString()
+                
+                if let sourceAddress = entity.in?.sourceAccountAddress?.displayName {
+                    contentConfiguration.secondaryText = sourceAddress.splitString()
+                }
             case 1:
                 contentConfiguration.text = "Transaction"
-                if let hash = entity.in?.bodyHash {
-                    contentConfiguration.secondaryText = String(data: hash, encoding: .utf8)
-                }
+                contentConfiguration.secondaryText = entity.id.hash.hexString().splitString()
             default: break
             }
         case .outgoing:
             switch indexPath.row {
             case 0:
                 contentConfiguration.text = "Recipient address"
-                contentConfiguration.secondaryText = entity.in?.destinationAccountAddress?.displayName
+                
+                if !entity.out.isEmpty {
+                    if let destinationAddress = entity.out[0].destinationAccountAddress?.displayName {
+                        contentConfiguration.secondaryText = destinationAddress.splitString()
+                    }
+                }
+                
             case 1:
                 contentConfiguration.text = "Transaction"
-                if let hash = entity.in?.bodyHash {
-                    contentConfiguration.secondaryText = String(data: hash, encoding: .utf8)
-                }
+                contentConfiguration.secondaryText = entity.id.hash.hexString().splitString()
             default: break
             }
         }

@@ -18,7 +18,9 @@ final class EnterConfirmViewController: UIViewController {
     public var presenter: EnterConfirmPresenterProtocol!
     public var configurator = EnterConfirmConfigurator()
     
-    private lazy var sendBottomConstraint = sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+    private var sendBottomConstraint: NSLayoutConstraint {
+        sendButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+    }
     
     private let amount: String
     private let address: String
@@ -230,19 +232,7 @@ extension EnterConfirmViewController: UITextViewDelegate {
 
 // MARK: - UITableViewDelegate
 extension EnterConfirmViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        view.applyCorners(to: [.topLeft, .topRight], with: view.bounds)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let isLastCell = tableView.numberOfRows(inSection: indexPath.section) - 1 == indexPath.row
-        
-        if isLastCell {
-            cell.applyCorners(to: [.bottomLeft, .bottomRight], with: cell.bounds)
-        } else {
-            cell.removeCorners()
-        }
-    }
+
 }
 
 // MARK: - UITableViewDataSource

@@ -20,8 +20,11 @@ final class TestViewController: UIViewController {
     public var configurator = TestConfigurator()
     
     public var enteredWords = ["", "", ""]
+    
+    private var activeTextField: UITextField?
     private let wordIndices: [Int]
     private let words: [String]
+    private let numberOfSuggestions = 3
         
     // MARK: - UI Elements
     private lazy var teacherView: LottieAnimationView = {
@@ -34,7 +37,9 @@ final class TestViewController: UIViewController {
     private let descriptionLabel = DescriptionLabel()
     private let stackView = StackView(spacing: 16, aligment: .center, distribution: .equalSpacing, axis: .vertical)
     
-    private var textFields = [TextField]()
+    private var textFields: [TextField] = []
+    private var wordButtons: [BackgroundButton] = []
+    
     private let continueButton = BackgroundButton(text: "Continue")
     
     // MARK: - View Life Cycle
@@ -109,9 +114,12 @@ private extension TestViewController {
     
     func setupProperties() {
         view.backgroundColor = ThemeColors.backgroundContent
+        setupTextFieldSuggestions()
     }
     
     func setupTargets() {
+        presenter.setupWordList()
+        
         descriptionLabel.text = "Let’s check that you wrote them down correctly. Please enter the words \(wordIndices[0] + 1), \(wordIndices[1] + 1) and \(wordIndices[2] + 1)."
         
         textFields.forEach {
@@ -129,10 +137,67 @@ private extension TestViewController {
         present(alertController, animated: true)
     }
     
+    func setupTextFieldSuggestions() {
+        let inputView = UIView()
+        inputView.backgroundColor = UIColor(red: 0.819, green: 0.827, blue: 0.85, alpha: 0.9)
+        inputView.frame.size = CGSize(width: screenSize.width, height: 48)
+        
+        let wordsStackView = StackView(
+            spacing: 4.5,
+            distribution: .fillEqually
+        )
+        wordsStackView.frame = CGRect(
+            origin: CGPoint(x: 3, y: 3),
+            size: CGSize(width: screenSize.width - 6, height: 42)
+        )
+        
+        inputView.addSubview(wordsStackView)
+        
+        for i in 0...numberOfSuggestions - 1 {
+            let button = BackgroundButton(
+                titleColor: .black,
+                background: UIColor(red: 0.913, green: 0.917, blue: 0.933, alpha: 1)
+            )
+            button.tag = i
+            button.titleLabel?.font = .systemFont(ofSize: 17, weight: .regular)
+            button.layer.cornerRadius = 4.5
+            button.addTarget(self, action: #selector(wordButtonTapped), for: .touchUpInside)
+            wordButtons.append(button)
+        }
+        
+        wordButtons.forEach { wordsStackView.addArrangedSubview($0) }
+        textFields.forEach { $0.inputAccessoryView = inputView }
+    }
+    
     // MARK: - Targets
     @objc func textFieldChanged(_ sender: UITextField) {
         guard let text = sender.text else { return }
         enteredWords[sender.tag] = text
+        let suitableWords = presenter.searchSuitableWords(text, maxSearchResults: numberOfSuggestions)
+        
+        if wordButtons.count == suitableWords.count {
+            for (i, button) in wordButtons.enumerated() {
+                button.setTitle(suitableWords[i], for: .normal)
+            }
+        }
+    }
+    
+    @objc func wordButtonTapped(_ sender: BackgroundButton) {
+        guard let text = sender.titleLabel?.text else {
+            return
+        }
+        guard let activeTextField = activeTextField else {
+            return
+        }
+        
+        activeTextField.text = text
+        enteredWords[activeTextField.tag] = text
+        
+        if activeTextField.tag != textFields.count - 1 {
+            textFields[activeTextField.tag + 1].becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+        }
     }
     
     @objc func continueButtonTapped() {
@@ -158,6 +223,10 @@ extension TestViewController: TestViewProtocol {}
 
 // MARK: - UITextFieldDelegate
 extension TestViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if !(textField.tag == textFields.count - 1) {
             textFields[textField.tag + 1].becomeFirstResponder()

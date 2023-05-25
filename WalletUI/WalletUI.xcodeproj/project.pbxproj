@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE0E27AC2A1F8B7000138792 /* Data + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0E27AB2A1F8B7000138792 /* Data + Extension.swift */; };
 		DE3C6AAC2A16BCBC0033AC22 /* SwiftyTON in Frameworks */ = {isa = PBXBuildFile; productRef = DE3C6AAB2A16BCBC0033AC22 /* SwiftyTON */; };
 		DE4C03D12A02EF5B00C3FFDC /* WalletEntity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C03D02A02EF5B00C3FFDC /* WalletEntity.framework */; };
 		DE4C03D22A02EF5B00C3FFDC /* WalletEntity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C03D02A02EF5B00C3FFDC /* WalletEntity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -94,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DE0E27AB2A1F8B7000138792 /* Data + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data + Extension.swift"; sourceTree = "<group>"; };
 		DE4C03D02A02EF5B00C3FFDC /* WalletEntity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletEntity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4C04122A02F1AE00C3FFDC /* WalletUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9F846C2A1A2225005F3F03 /* TransformImageArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformImageArguments.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 				DEC174AF2A1D2DEB00926B3D /* WalletInvoiceUrl.swift */,
 				DEC174AC2A1D2DEB00926B3D /* WalletUtils.docc */,
 				DEC174BA2A1D2DEB00926B3D /* WalletUtils.h */,
+				DE0E27AB2A1F8B7000138792 /* Data + Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				DEF1A7462A02E18B005F272C /* StackView.swift in Sources */,
 				DEF1A7112A02DED0005F272C /* BackgroundButton.swift in Sources */,
 				DEC174CB2A1D2DEB00926B3D /* UIAlertController+Extension.swift in Sources */,
+				DE0E27AC2A1F8B7000138792 /* Data + Extension.swift in Sources */,
 				DEF1A7422A02E18B005F272C /* SeparatorView.swift in Sources */,
 				DEF1A7262A02DED0005F272C /* TransactionsTableView.swift in Sources */,
 				DE9F846D2A1A2225005F3F03 /* TransformImageArguments.swift in Sources */,

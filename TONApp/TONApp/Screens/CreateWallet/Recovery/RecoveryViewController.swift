@@ -197,6 +197,9 @@ private extension RecoveryViewController {
     func configureNavBarTitle() {
         let titleView = TitleLabel(text: titleLabel.text, fontSize: 17)
         navigationItem.titleView = titleView
+        DispatchQueue.main.async {
+            self.navigationItem.titleView?.alpha = 0
+        }
     }
 }
 
@@ -209,7 +212,7 @@ extension RecoveryViewController: UIScrollViewDelegate {
         let scrollOffset = scrollView.contentOffset.y
         let titlePosition = titleLabel.convert(CGPoint.zero, to: titleLabel.superview).y
         
-        if scrollOffset >= titlePosition {
+        if scrollOffset >= 150 {
             navigationItem.titleView?.transitionElement(duration: 0.3, alpha: 1)
         } else {
             navigationItem.titleView?.transitionElement(duration: 0.3, alpha: 0)
