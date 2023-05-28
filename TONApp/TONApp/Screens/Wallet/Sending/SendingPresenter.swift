@@ -43,13 +43,10 @@ extension SendingPresenter: SendingPresenterProtocol {
                     switch currentContract {
                     case ContractConstants.v4R2.rawValue:
                         wallet = try await walletManager.getWallet4(key: key, revision: .r2)
-                        try await KeystoreManager.shared.save(wallet4: wallet as! Wallet4)
                     case ContractConstants.v3R2.rawValue:
                         wallet = try await walletManager.getWallet3(key: key, revision: .r2)
-                        try await KeystoreManager.shared.save(wallet3: wallet as! Wallet3)
                     case ContractConstants.v3R1.rawValue:
                         wallet = try await walletManager.getWallet3(key: key, revision: .r1)
-                        try await KeystoreManager.shared.save(wallet3: wallet as! Wallet3)
                     default:
                         return
                     }
@@ -83,13 +80,18 @@ extension SendingPresenter: SendingPresenterProtocol {
                 
                 try await message.send()
                 
-                let date = Date()
+                var date = Date()
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateFormat = "MMMM d"
                 
                 let calendar = Calendar.current
-                let day = dateFormatter.string(from: date)
+                let components = DateComponents(calendar: calendar)
                 
+                if let currentDate = calendar.date(from: components) {
+                    date = currentDate
+                }
+                
+                let day = dateFormatter.string(from: date)
                 
                 databaseManager.saveRecentTransaction(
                     transaction: (view.address, day)

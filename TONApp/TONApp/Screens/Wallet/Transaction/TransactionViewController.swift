@@ -214,7 +214,28 @@ private extension TransactionViewController {
     }
     
     @objc func sendButtonTapped() {
-        presenter.sendButtonTapped()
+        switch cellType {
+        case .incoming:
+            if let inEntity = entity.in,
+               let address = inEntity.destinationAccountAddress {
+                presenter.sendButtonTapped(
+                    address: address.displayName,
+                    amount: inEntity.value.string(with: .maximum9minimum9),
+                    comment: nil
+                )
+            }
+
+        case .outgoing:
+            if !entity.out.isEmpty,
+                let address = entity.out[0].destinationAccountAddress {
+                presenter.sendButtonTapped(
+                    address: address.displayName,
+                    amount: entity.out[0].value.string(with: .maximum9minimum9),
+                    comment: nil
+                )
+            }
+        }
+
     }
 }
 

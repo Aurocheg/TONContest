@@ -34,21 +34,21 @@ protocol WalletManagerProtocol {
         with key: Key,
         to address: String,
         with amount: String,
-        comment: String
+        comment: String?
     ) async throws -> Message
     func getMessage(
         wallet: Wallet3,
         with key: Key,
         to address: String,
         with amount: String,
-        comment: String
+        comment: String?
     ) async throws -> Message
     func getMessage(
         wallet: AnyWallet,
         with key: Key,
         to address: String,
         with amount: String,
-        comment: String
+        comment: String?
     ) async throws -> Message
 }
 
@@ -270,7 +270,7 @@ extension WalletManager: WalletManagerProtocol {
         with key: Key,
         to address: String,
         with amount: String,
-        comment: String
+        comment: String? = nil
     ) async throws -> Message {
         guard let displayableAddress = await DisplayableAddress(string: address) else {
             throw WalletManagerErrors.invalidAddress
@@ -278,7 +278,7 @@ extension WalletManager: WalletManagerProtocol {
         return try await wallet.subsequentTransferMessage(
             to: displayableAddress.concreteAddress,
             amount: Currency(value: amount)!,
-            message: (comment.data(using: .utf8), nil),
+            message: (comment?.data(using: .utf8), nil),
             key: key,
             passcode: passcodeData
         )
@@ -289,7 +289,7 @@ extension WalletManager: WalletManagerProtocol {
         with key: Key,
         to address: String,
         with amount: String,
-        comment: String
+        comment: String? = nil
     ) async throws -> Message {
         guard let displayableAddress = await DisplayableAddress(string: address) else {
             throw WalletManagerErrors.invalidAddress
@@ -297,7 +297,7 @@ extension WalletManager: WalletManagerProtocol {
         return try await wallet.subsequentTransferMessage(
             to: displayableAddress.concreteAddress,
             amount: Currency(value: amount)!,
-            message: (comment.data(using: .utf8), nil),
+            message: (comment?.data(using: .utf8), nil),
             key: key,
             passcode: passcodeData
         )
@@ -308,14 +308,14 @@ extension WalletManager: WalletManagerProtocol {
         with key: Key,
         to address: String,
         with amount: String,
-        comment: String
+        comment: String? = nil
     ) async throws -> Message {
         guard let displayableAddress = await DisplayableAddress(string: address) else { throw WalletManagerErrors.invalidAddress
         }
         return try await wallet.subsequentTransferMessage(
             to: displayableAddress.concreteAddress,
             amount: Currency(value: amount)!,
-            message: (comment.data(using: .utf8), nil),
+            message: (comment?.data(using: .utf8), nil),
             key: key,
             passcode: passcodeData
         )

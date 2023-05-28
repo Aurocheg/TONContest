@@ -244,11 +244,13 @@ extension SendViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: recentReuseIdentifier, for: indexPath)
         cell.selectionStyle = .none
         
-        let currentTransaction = presenter.recentTransactions?[indexPath.row]
         var contentConfiguration = cell.defaultContentConfiguration()
         
-        contentConfiguration.text = currentTransaction?.walletName
-        contentConfiguration.secondaryText = currentTransaction?.transactionDate
+        if let currentTransaction = presenter.recentTransactions?[indexPath.row] {
+            let (walletAddress, date) = currentTransaction
+            contentConfiguration.text = walletAddress
+            contentConfiguration.secondaryText = date
+        }
         
         cell.contentConfiguration = contentConfiguration
         return cell
