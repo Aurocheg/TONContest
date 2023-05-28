@@ -12,10 +12,12 @@ final class EnterConfigurator {
         let presenter = EnterPresenter(view: viewController)
         let router = EnterRouter(viewController: viewController)
         let lottieManager = LottieManager()
+        let databaseManager = DatabaseManager()
         
         viewController.presenter = presenter
         viewController.lottieManager = lottieManager
         presenter.router = router
+        presenter.databaseManager = databaseManager
     }
 }
 

@@ -11,6 +11,7 @@
 		DE3C6AAC2A16BCBC0033AC22 /* SwiftyTON in Frameworks */ = {isa = PBXBuildFile; productRef = DE3C6AAB2A16BCBC0033AC22 /* SwiftyTON */; };
 		DE4C03D12A02EF5B00C3FFDC /* WalletEntity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C03D02A02EF5B00C3FFDC /* WalletEntity.framework */; };
 		DE4C03D22A02EF5B00C3FFDC /* WalletEntity.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C03D02A02EF5B00C3FFDC /* WalletEntity.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE7F1ABF2A2282950040C456 /* AddressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1ABE2A2282950040C456 /* AddressLabel.swift */; };
 		DE9F846D2A1A2225005F3F03 /* TransformImageArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F846C2A1A2225005F3F03 /* TransformImageArguments.swift */; };
 		DE9F846F2A1A224E005F3F03 /* ImageCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F846E2A1A224E005F3F03 /* ImageCorners.swift */; };
 		DE9F84742A1A22D9005F3F03 /* GenerateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9F84732A1A22D9005F3F03 /* GenerateImage.swift */; };
@@ -98,6 +99,7 @@
 		DE0E27AB2A1F8B7000138792 /* Data + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data + Extension.swift"; sourceTree = "<group>"; };
 		DE4C03D02A02EF5B00C3FFDC /* WalletEntity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletEntity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE4C04122A02F1AE00C3FFDC /* WalletUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE7F1ABE2A2282950040C456 /* AddressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressLabel.swift; sourceTree = "<group>"; };
 		DE9F846C2A1A2225005F3F03 /* TransformImageArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformImageArguments.swift; sourceTree = "<group>"; };
 		DE9F846E2A1A224E005F3F03 /* ImageCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCorners.swift; sourceTree = "<group>"; };
 		DE9F84732A1A22D9005F3F03 /* GenerateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateImage.swift; sourceTree = "<group>"; };
@@ -429,6 +431,7 @@
 			isa = PBXGroup;
 			children = (
 				DEF1A70B2A02DED0005F272C /* AmountLabel.swift */,
+				DE7F1ABE2A2282950040C456 /* AddressLabel.swift */,
 				DEF1A70C2A02DED0005F272C /* DescriptionLabel.swift */,
 				DEF1A70D2A02DED0005F272C /* DateHeaderLabel.swift */,
 				DEF1A70E2A02DED0005F272C /* TitleLabel.swift */,
@@ -535,6 +538,7 @@
 				DEF1A7402A02E18B005F272C /* NavigationController.swift in Sources */,
 				DEC174C22A1D2DEB00926B3D /* UIView + Extension.swift in Sources */,
 				DEC174C92A1D2DEB00926B3D /* UILabel + Extension.swift in Sources */,
+				DE7F1ABF2A2282950040C456 /* AddressLabel.swift in Sources */,
 				DEC174E32A1D2E9E00926B3D /* DismissAnimation.swift in Sources */,
 				DE9F846F2A1A224E005F3F03 /* ImageCorners.swift in Sources */,
 				DEF1A71D2A02DED0005F272C /* TransactionTableCell.swift in Sources */,

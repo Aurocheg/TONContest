@@ -16,9 +16,21 @@ enum MainViewState {
     case transactions
 }
 
+enum StatusState: String {
+    case waitingForNetwork = "Waiting for network"
+    case connecting = "Connecting"
+    case updating = "Updating"
+    case connected
+}
+
 protocol MainViewProtocol: AnyObject {
+    func configureStatus(with state: StatusState)
     func configureViews(with state: MainViewState)
-    func configureTitleNavBar(with sum: Double?)
+    func configureTitleNavBar(
+        with sum: Double,
+        currency: String,
+        exchangeValue: Double
+    )
     func updateBalance(with amount: Double?)
     func updateAddress(with address: String?)
     func animateCreatedElementsAlpha(to: CGFloat)
@@ -35,25 +47,23 @@ final class MainViewController: UIViewController {
     private var isContentViewPinnedToTop = false
             
     // MARK: Constraints
-    private var contentDefaultTopConstraint: NSLayoutConstraint {
-        contentView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 16)
-    }
-    private var contentPinnedTopConstraint: NSLayoutConstraint {
-        contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-    }
+    private lazy var contentDefaultTopConstraint = contentView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 16)
+    private lazy var contentPinnedTopConstraint = contentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
     
     // MARK: - UI Elements
+    private let statusStackView = StackView(spacing: 8)
+    private let statusLabel = DescriptionLabel(
+        text: StatusState.waitingForNetwork.rawValue,
+        textColor: ThemeColors.textOverlay,
+        fontWeight: .semibold
+    )
+    private let statusIndicatorView = UIActivityIndicatorView()
+    
     private let balanceStackView = StackView(
         aligment: .center,
         distribution: .equalSpacing
     )
-    private let addressLabel: DescriptionLabel = {
-        let label = DescriptionLabel(
-            textColor: ThemeColors.textOverlay
-        )
-        label.alpha = 0
-        return label
-    }()
+    private let addressLabel = AddressLabel(textColor: .white)
     private lazy var diaomondView: LottieAnimationView = {
         let view = LottieAnimationView()
         view.loopMode = .loop
@@ -127,7 +137,7 @@ final class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         let scanIcon = UIImage(named: "scan-28")?
             .withTintColor(.white, renderingMode: .alwaysOriginal)
         let settingsIcon = UIImage(named: "settings-28")?
@@ -138,6 +148,21 @@ final class MainViewController: UIViewController {
         
         navigationItem.leftBarButtonItem = scanBarButtonItem
         navigationItem.rightBarButtonItem = settingsBarButtonItem
+        
+        statusStackView.addArrangedSubviews(statusIndicatorView, statusLabel)
+        navigationItem.titleView = statusStackView
+        
+        DispatchQueue.main.async {
+            self.navigationItem.titleView?.alpha = 0
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    
+        applyAppearingAnimation(elements: [
+            navigationItem.titleView, addressLabel, balanceStackView, buttonsStackView, contentView
+        ])
     }
 }
 
@@ -172,7 +197,7 @@ private extension MainViewController {
         buttonsStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: buttonsStackView.bottomAnchor, constant: 16).isActive = true
+        contentDefaultTopConstraint.isActive = true
         contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
@@ -187,10 +212,16 @@ private extension MainViewController {
     func setupProperties() {
         view.backgroundColor = ThemeColors.backgroundBase
 
+        addressLabel.alpha = 0
+        balanceStackView.alpha = 0
+        buttonsStackView.alpha = 0
+        contentView.alpha = 0
+
         contentView.isUserInteractionEnabled = true
     }
     
     func setupTargets() {
+        presenter.checkForNetwork()
         presenter.loadWallet()
         
         NotificationCenter.default.addObserver(
@@ -200,6 +231,12 @@ private extension MainViewController {
             object: nil
         )
 
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(handleCurrencyChanged),
+            name: Notification.Name("CurrencyChanged"),
+            object: nil
+        )
         
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture))
         panGesture.delegate = self
@@ -268,7 +305,7 @@ private extension MainViewController {
         transactionsTableView.translatesAutoresizingMaskIntoConstraints = false
         transactionsTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         transactionsTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        transactionsTableView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        transactionsTableView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
         transactionsTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
         transactionsTableView.register(
@@ -281,6 +318,10 @@ private extension MainViewController {
     
     @objc func handleContractChanged() {
         presenter.loadWallet()
+    }
+    
+    @objc func handleCurrencyChanged() {
+        presenter.handleCurrencyChanged()
     }
     
     @objc func scanTapped() {
@@ -311,24 +352,31 @@ private extension MainViewController {
         guard isTransactionsEnabled else {
             return
         }
-        guard let view = gesture.view else { return }
+        
         let velocity = gesture.velocity(in: view)
         let isMovingUp = velocity.y <= 0
         
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseInOut]) {
-            if isMovingUp {
+        if isMovingUp {
+            UIView.animate(withDuration: 0.3) {
                 self.contentDefaultTopConstraint.isActive = false
                 self.contentPinnedTopConstraint.isActive = true
-                self.buttonsStackView.alpha = 0
-                self.isContentViewPinnedToTop = true
-            } else {
+                self.navigationItem.titleView?.alpha = 1
+                self.view.layoutIfNeeded()
+            }
+            
+            isContentViewPinnedToTop = true
+        } else {
+            UIView.animate(withDuration: 0.3) {
                 self.contentPinnedTopConstraint.isActive = false
                 self.contentDefaultTopConstraint.isActive = true
-                self.buttonsStackView.alpha = 1
-                self.isContentViewPinnedToTop = false
+                self.navigationItem.titleView?.alpha = 0
+                self.view.layoutIfNeeded()
             }
-            self.view.layoutIfNeeded()
+            
+            isContentViewPinnedToTop = false
         }
+        
+        gesture.setTranslation(.zero, in: view)
         
         if isContentViewPinnedToTop {
             transactionsTableView?.isScrollEnabled = true
@@ -340,6 +388,17 @@ private extension MainViewController {
 
 // MARK: - MainViewProtocol
 extension MainViewController: MainViewProtocol {
+    func configureStatus(with state: StatusState) {
+        if state == .connected {
+            navigationItem.titleView = nil
+            statusIndicatorView.stopAnimating()
+        } else {
+            navigationItem.titleView?.transitionElement(duration: 0.2, alpha: 1)
+            statusIndicatorView.startAnimating()
+            statusLabel.text = state.rawValue
+        }
+    }
+    
     func configureViews(with state: MainViewState) {
         switch state {
         case .loading:
@@ -362,8 +421,11 @@ extension MainViewController: MainViewProtocol {
         }
     }
     
-    func configureTitleNavBar(with sum: Double?) {
-        guard let sum = sum else { return }
+    func configureTitleNavBar(
+        with sum: Double,
+        currency: String,
+        exchangeValue: Double
+    ) {
         let titleView = UIView()
 
         let image = UIImage(named: "coin-icon")
@@ -390,7 +452,7 @@ extension MainViewController: MainViewProtocol {
         let currencyLabel = UILabel()
         currencyLabel.font = .systemFont(ofSize: 13)
         currencyLabel.textColor = .lightGray
-        currencyLabel.text = "=$89.6"
+        currencyLabel.text = "=\(currency)\(exchangeValue)"
         titleView.addSubview(currencyLabel)
         
         currencyLabel.translatesAutoresizingMaskIntoConstraints = false

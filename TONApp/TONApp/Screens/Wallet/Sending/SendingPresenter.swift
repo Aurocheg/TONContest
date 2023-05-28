@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WalletEntity
 import SwiftyTON
 
 protocol SendingPresenterProtocol: AnyObject {
@@ -20,6 +21,7 @@ final class SendingPresenter {
     public var databaseManager: DatabaseManagerProtocol!
     
     private let walletManager = WalletManager.shared
+    private let date = Date()
     
     required init(view: SendingViewProtocol) {
         self.view = view
@@ -39,13 +41,13 @@ extension SendingPresenter: SendingPresenterProtocol {
                 
                 if let currentContract = databaseManager.getCurrentContract() {
                     switch currentContract {
-                    case "v4R2":
+                    case ContractConstants.v4R2.rawValue:
                         wallet = try await walletManager.getWallet4(key: key, revision: .r2)
                         try await KeystoreManager.shared.save(wallet4: wallet as! Wallet4)
-                    case "v3R2":
+                    case ContractConstants.v3R2.rawValue:
                         wallet = try await walletManager.getWallet3(key: key, revision: .r2)
                         try await KeystoreManager.shared.save(wallet3: wallet as! Wallet3)
-                    case "v3R1":
+                    case ContractConstants.v3R1.rawValue:
                         wallet = try await walletManager.getWallet3(key: key, revision: .r1)
                         try await KeystoreManager.shared.save(wallet3: wallet as! Wallet3)
                     default:
@@ -80,6 +82,18 @@ extension SendingPresenter: SendingPresenterProtocol {
                 }
                 
                 try await message.send()
+                
+                let date = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "MMMM d"
+                
+                let calendar = Calendar.current
+                let day = dateFormatter.string(from: date)
+                
+                
+                databaseManager.saveRecentTransaction(
+                    transaction: (view.address, day)
+                )
                 
                 DispatchQueue.main.async {
                     self.view.updateToSuccess(sendWalletAddress: self.view.address)

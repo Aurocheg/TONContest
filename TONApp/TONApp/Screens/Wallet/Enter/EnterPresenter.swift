@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftyTON
+import WalletEntity
 
 protocol EnterPresenterProtocol: AnyObject {
     var balance: Double? { get }
@@ -18,6 +19,8 @@ protocol EnterPresenterProtocol: AnyObject {
 final class EnterPresenter {
     weak var view: EnterViewProtocol!
     public var router: EnterRouterProtocol!
+    public var databaseManager: DatabaseManagerProtocol!
+    
     public var balance: Double?
     
     private let walletManager = WalletManager.shared
@@ -34,8 +37,21 @@ extension EnterPresenter: EnterPresenterProtocol {
             guard let key = try await KeystoreManager.shared.loadKey() else {
                 throw WalletManagerErrors.keyNotFoundInMemory
             }
-            guard let wallet = try await KeystoreManager.shared.loadWallet4() else {
-                throw WalletManagerErrors.walletNotFoundInMemory
+            let wallet: Wallet
+                        
+            if let currentContract = databaseManager.getCurrentContract() {
+                switch currentContract {
+                case ContractConstants.v4R2.rawValue:
+                    wallet = try await walletManager.getWallet4(key: key, revision: .r2)
+                case ContractConstants.v3R2.rawValue:
+                    wallet = try await walletManager.getWallet3(key: key, revision: .r2)
+                case ContractConstants.v3R1.rawValue:
+                    wallet = try await walletManager.getWallet3(key: key, revision: .r1)
+                default:
+                    return
+                }
+            } else {
+                wallet = try await walletManager.getWallet4(key: key, revision: .r2)
             }
             
             balance = Double(wallet.contract.info.balance.string(with: .maximum9minimum9))
@@ -59,6 +75,11 @@ extension EnterPresenter: EnterPresenterProtocol {
         }
         if doubleAmount <= balance {
             router.showEnterConfirm(amount: amount, address: address)
+        } else if doubleAmount == balance {
+            router.showEnterConfirm(
+                amount: String(Double(doubleAmount) * 0.99),
+                address: address
+            )
         }
     }
 }

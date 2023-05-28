@@ -12,6 +12,7 @@ public final class DescriptionLabel: UILabel {
         text: String? = nil,
         textColor: UIColor = ThemeColors.textPrimary,
         fontSize: CGFloat = 17,
+        fontWeight: UIFont.Weight = .regular,
         textAlignment: NSTextAlignment = .center,
         indent: CGFloat? = nil
     ) {
@@ -31,7 +32,7 @@ public final class DescriptionLabel: UILabel {
         
         self.textColor = textColor
         self.textAlignment = textAlignment
-        font = .systemFont(ofSize: fontSize)
+        font = .systemFont(ofSize: fontSize, weight: fontWeight)
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
     }

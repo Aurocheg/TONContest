@@ -30,6 +30,8 @@ final class LockViewController: UIViewController {
     private let lockType: LockType
     private let deepLinkAddress: String?
     
+    private let feedbackGenerator = UIImpactFeedbackGenerator(style: .light)
+    
     // MARK: - UI Elements
     private let coinImageView = ImageView(image: UIImage(named: "coin-48"))
     private let descriptionLabel = DescriptionLabel(
@@ -51,6 +53,14 @@ final class LockViewController: UIViewController {
         setupLayout()
         setupProperties()
         setupTargets()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        applyAppearingAnimation(elements: [
+            coinImageView, descriptionLabel, stackView, lockCollectionView
+        ])
     }
     
     init(lockType: LockType, deepLinkAddress: String? = nil) {
@@ -84,7 +94,7 @@ private extension LockViewController {
         
         circlesArray.forEach { circle in
             stackView.addArrangedSubview(circle)
-        }
+        }        
     }
     
     func setupLayout() {
@@ -133,9 +143,16 @@ private extension LockViewController {
     func setupProperties() {
         view.backgroundColor = ThemeColors.backgroundBase
         stackView.backgroundColor = .clear
+        
+        coinImageView.alpha = 0
+        descriptionLabel.alpha = 0
+        stackView.alpha = 0
+        lockCollectionView.alpha = 0
     }
     
     func setupTargets() {
+        feedbackGenerator.prepare()
+        
         presenter.setupLockItems()
         
         lockCollectionView.register(LockCollectionCell.self, forCellWithReuseIdentifier: LockCollectionCell.reuseIdentifier)
@@ -163,7 +180,19 @@ extension LockViewController: UICollectionViewDelegate {
             return
         }
         
-        UIDevice.current.playInputClick()
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.1) {
+                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.3)
+            } completion: { isCompleted in
+                if isCompleted {
+                    UIView.animate(withDuration: 0.1) {
+                        cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.12)
+                    }
+                }
+            }
+        }
+    
+        feedbackGenerator.impactOccurred()
                         
         if passcodeArray.count < userPassword.count {
             switch currentItem.configuration {
@@ -198,6 +227,14 @@ extension LockViewController: UICollectionViewDelegate {
                     passcodeArray.removeLast()
                     circlesArray[currentCircleIndex].removeFilling()
                 }
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.2) {
+                cell.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.12)
             }
         }
     }

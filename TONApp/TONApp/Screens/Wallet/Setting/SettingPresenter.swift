@@ -39,6 +39,7 @@ final class SettingPresenter {
     public var isFaceIdEstablished: Bool?
     
     private let contractChangedNotification = Notification.Name("ContractChanged")
+    private let currencyChangedNotification = Notification.Name("CurrencyChanged")
     
     required init(view: SettingViewProtocol) {
         self.view = view
@@ -136,6 +137,7 @@ extension SettingPresenter: SettingPresenterProtocol {
             NotificationCenter.default.post(name: contractChangedNotification, object: nil)
         case .currency:
             databaseManager.saveCurrentCurrency(currency: title)
+            NotificationCenter.default.post(name: currencyChangedNotification, object: nil)
         }
         
         configureSettingsIfPossible()

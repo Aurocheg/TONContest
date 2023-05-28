@@ -14,12 +14,14 @@ final class MainConfigurator {
         let lottieManager = LottieManager()
         let databaseManager = DatabaseManager()
         let processTransactionsManager = ProcessTransactionsManager()
+        let exchangeManager = ExchangeManager()
         
         viewController.presenter = presenter
         viewController.lottieManager = lottieManager
         presenter.router = router
         presenter.databaseManager = databaseManager
         presenter.processTransactionsManager = processTransactionsManager
+        presenter.exchangeManager = exchangeManager
     }
 }
 

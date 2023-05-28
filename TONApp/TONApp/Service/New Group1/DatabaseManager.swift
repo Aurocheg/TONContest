@@ -17,6 +17,7 @@ protocol DatabaseManagerProtocol: AnyObject {
     func savePassword(password: [String])
     func saveAppState(isWalletCreated: Bool)
     func saveTempDeepLink(_ string: String)
+    func saveRecentTransaction(transaction: (String, String))
     
     func getWords() -> [String]?
     func getCurrentCurrency() -> String?
@@ -26,6 +27,7 @@ protocol DatabaseManagerProtocol: AnyObject {
     func getPassword() -> [String]?
     func getAppState() -> Bool?
     func getTempDeepLink() -> String?
+    func getRecentTransactions() -> [(String, String)]?
     
     func deleteTempDeepLink()
 }
@@ -75,6 +77,29 @@ extension DatabaseManager: DatabaseManagerProtocol {
         userDefaults.setValue(isEnabled, forKey: UserDefaults.Constants.isNotificationsEnabled)
     }
     
+    func savePassword(password: [String]) {
+        userDefaults.setValue(password, forKey: UserDefaults.Constants.password)
+    }
+    
+    func saveAppState(isWalletCreated: Bool) {
+        userDefaults.setValue(isWalletCreated, forKey: UserDefaults.Constants.isWalletCreated)
+    }
+    
+    func saveTempDeepLink(_ string: String) {
+        userDefaults.setValue(string, forKey: UserDefaults.Constants.tempDeepLink)
+    }
+    
+    func saveRecentTransaction(transaction: (String, String)) {
+        guard var transactions = getRecentTransactions() else {
+            var transactionsArray: [(String, String)] = []
+            transactionsArray.append(transaction)
+            userDefaults.setValue(transactionsArray, forKey: UserDefaults.Constants.recentTransactions)
+            return
+        }
+        transactions.append(transaction)
+        userDefaults.setValue(transactions, forKey: UserDefaults.Constants.recentTransactions)
+    }
+    
     func getIsNotificationsEnabled() -> Bool? {
         if let object = userDefaults.object(forKey: UserDefaults.Constants.isNotificationsEnabled) as? Bool {
             return object
@@ -103,22 +128,6 @@ extension DatabaseManager: DatabaseManagerProtocol {
         return nil
     }
     
-    func savePassword(password: [String]) {
-        userDefaults.setValue(password, forKey: UserDefaults.Constants.password)
-    }
-    
-    func saveAppState(isWalletCreated: Bool) {
-        userDefaults.setValue(isWalletCreated, forKey: UserDefaults.Constants.isWalletCreated)
-    }
-    
-    func saveTempDeepLink(_ string: String) {
-        userDefaults.setValue(string, forKey: UserDefaults.Constants.tempDeepLink)
-    }
-    
-    func deleteTempDeepLink() {
-        userDefaults.removeObject(forKey: UserDefaults.Constants.tempDeepLink)
-    }
-    
     func getPassword() -> [String]? {
         if let object = userDefaults.object(forKey: UserDefaults.Constants.password) as? [String] {
             return object
@@ -138,5 +147,16 @@ extension DatabaseManager: DatabaseManagerProtocol {
             return object
         }
         return nil
+    }
+    
+    func getRecentTransactions() -> [(String, String)]? {
+        if let object = userDefaults.object(forKey: UserDefaults.Constants.recentTransactions) as? [(String, String)] {
+            return object
+        }
+        return nil
+    }
+    
+    func deleteTempDeepLink() {
+        userDefaults.removeObject(forKey: UserDefaults.Constants.tempDeepLink)
     }
 }

@@ -14,10 +14,9 @@ protocol ProcessTransactionsManagerProtocol {
 
 final class ProcessTransactionsManager {
     private let dateFormatter = DateFormatter()
-    private let dateFormat: String
     
     init(dateFormat: String = "MMMM d") {
-        self.dateFormat = dateFormat
+        dateFormatter.dateFormat = dateFormat
     }
 }
 

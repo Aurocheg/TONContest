@@ -88,6 +88,7 @@
 		DE7BF72229E0303700338D4B /* PasscodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BF72129E0303700338D4B /* PasscodePresenter.swift */; };
 		DE7BF72629E030A500338D4B /* PasscodeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BF72529E030A500338D4B /* PasscodeConfigurator.swift */; };
 		DE7BF72829E030A900338D4B /* PasscodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7BF72729E030A900338D4B /* PasscodeRouter.swift */; };
+		DE7F1ABD2A220FEE0040C456 /* ConnectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7F1ABC2A220FEE0040C456 /* ConnectionService.swift */; };
 		DE8842B229DACD490051EE84 /* LottieManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8842B129DACD490051EE84 /* LottieManager.swift */; };
 		DE8842BE29DAD0160051EE84 /* success.json in Resources */ = {isa = PBXBuildFile; fileRef = DE8842B329DAD0150051EE84 /* success.json */; };
 		DE8842BF29DAD0160051EE84 /* start.json in Resources */ = {isa = PBXBuildFile; fileRef = DE8842B429DAD0160051EE84 /* start.json */; };
@@ -134,6 +135,7 @@
 		DEE5D59029ED7BAE001035DE /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D58F29ED7BAE001035DE /* SettingPresenter.swift */; };
 		DEE5D59429ED7C00001035DE /* SettingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D59329ED7C00001035DE /* SettingRouter.swift */; };
 		DEE5D59629ED7C1C001035DE /* SettingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE5D59529ED7C1C001035DE /* SettingConfigurator.swift */; };
+		DEF84DA52A1FE4080010CF57 /* ExchangeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF84DA42A1FE4080010CF57 /* ExchangeManager.swift */; };
 		DEFB7DE32A1E1EE4003776DA /* PossibleWordListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFB7DE22A1E1EE4003776DA /* PossibleWordListManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -235,6 +237,7 @@
 		DE7BF72129E0303700338D4B /* PasscodePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodePresenter.swift; sourceTree = "<group>"; };
 		DE7BF72529E030A500338D4B /* PasscodeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeConfigurator.swift; sourceTree = "<group>"; };
 		DE7BF72729E030A900338D4B /* PasscodeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeRouter.swift; sourceTree = "<group>"; };
+		DE7F1ABC2A220FEE0040C456 /* ConnectionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionService.swift; sourceTree = "<group>"; };
 		DE8842B129DACD490051EE84 /* LottieManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieManager.swift; sourceTree = "<group>"; };
 		DE8842B329DAD0150051EE84 /* success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = success.json; sourceTree = "<group>"; };
 		DE8842B429DAD0160051EE84 /* start.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = start.json; sourceTree = "<group>"; };
@@ -281,6 +284,7 @@
 		DEE5D58F29ED7BAE001035DE /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		DEE5D59329ED7C00001035DE /* SettingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRouter.swift; sourceTree = "<group>"; };
 		DEE5D59529ED7C1C001035DE /* SettingConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingConfigurator.swift; sourceTree = "<group>"; };
+		DEF84DA42A1FE4080010CF57 /* ExchangeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeManager.swift; sourceTree = "<group>"; };
 		DEFB7DE22A1E1EE4003776DA /* PossibleWordListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PossibleWordListManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -446,6 +450,8 @@
 				DE1EF8582A1BB3F6004E1EE0 /* AuthManager.swift */,
 				DEC174A02A1D288200926B3D /* ProcessTransactionsManager.swift */,
 				DEFB7DE22A1E1EE4003776DA /* PossibleWordListManager.swift */,
+				DEF84DA42A1FE4080010CF57 /* ExchangeManager.swift */,
+				DE7F1ABC2A220FEE0040C456 /* ConnectionService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -828,6 +834,7 @@
 				DE88B83B29DC12BA00E49AC7 /* CongratsRouter.swift in Sources */,
 				DE39F92A29F0144D004D6B3F /* SendPresenter.swift in Sources */,
 				DEE5D59629ED7C1C001035DE /* SettingConfigurator.swift in Sources */,
+				DE7F1ABD2A220FEE0040C456 /* ConnectionService.swift in Sources */,
 				DE3732D429E6BE7600506B4F /* ImportBadViewController.swift in Sources */,
 				DE0B4A4729E575DB00B23DF9 /* ImportStartViewController.swift in Sources */,
 				DE2A6F0629E3DF28002C8AD3 /* ConfirmPresenter.swift in Sources */,
@@ -918,6 +925,7 @@
 				DE8842B229DACD490051EE84 /* LottieManager.swift in Sources */,
 				DE3C2D5529CE2968003324C7 /* StartConfigurator.swift in Sources */,
 				DE96272E29FC065000FCD0E4 /* TransferViewController.swift in Sources */,
+				DEF84DA52A1FE4080010CF57 /* ExchangeManager.swift in Sources */,
 				DE39F92E29F0148F004D6B3F /* SendRouter.swift in Sources */,
 				DE7BF72229E0303700338D4B /* PasscodePresenter.swift in Sources */,
 				DEE5D58E29ED7B03001035DE /* SettingViewController.swift in Sources */,

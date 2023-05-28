@@ -56,7 +56,8 @@ public struct Setting: SettingEntity {
                         configuration: .picker(.currency),
                         pickers: [
                             SettingPicker(title: CurrencyConstants.dollar.rawValue),
-                            SettingPicker(title: CurrencyConstants.euro.rawValue)
+                            SettingPicker(title: CurrencyConstants.euro.rawValue),
+                            SettingPicker(title: CurrencyConstants.rub.rawValue)
                         ]
                     )
                 ]

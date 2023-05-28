@@ -11,7 +11,7 @@ import WalletEntity
 import SwiftyTON
 
 protocol SendPresenterProtocol: AnyObject {
-    var recentTransactions: [RecentTransactionEntity]? { get }
+    var recentTransactions: [(String, String)]? { get }
     func pasteQrDeepLinkIfNeeded()
     func pasteDeepLinkAddress(address: String?)
     func scanButtonTapped()
@@ -23,7 +23,7 @@ final class SendPresenter {
     weak var view: SendViewProtocol!
     public var router: SendRouterProtocol!
     public var databaseManager: DatabaseManagerProtocol!
-    public var recentTransactions: [RecentTransactionEntity]?
+    public var recentTransactions: [(String, String)]?
         
     required init(view: SendViewProtocol) {
         self.view = view
@@ -109,7 +109,7 @@ extension SendPresenter: SendPresenterProtocol {
     }
     
     func getRecentTransactions() {
-
+        
     }
     
     func continueButtonTapped(address: String) {

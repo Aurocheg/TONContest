@@ -192,7 +192,7 @@ public extension TransactionTableCell {
                 configureMessage(with: value)
                 addConstraintsToSeparator(relative: messageView)
             default:
-                addConstraintsToSeparator(relative: feeLabel)
+                addConstraintsToSeparator(relative: messageView)
             }
         } else {
             addConstraintsToSeparator(relative: feeLabel)

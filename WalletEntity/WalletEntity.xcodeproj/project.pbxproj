@@ -16,6 +16,7 @@
 		DE9F84882A1A468A005F3F03 /* SwiftyTON in Frameworks */ = {isa = PBXBuildFile; productRef = DE9F84872A1A468A005F3F03 /* SwiftyTON */; };
 		DEC1749C2A1D097D00926B3D /* ContractConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1749B2A1D097D00926B3D /* ContractConstants.swift */; };
 		DEC1749E2A1D09A500926B3D /* CurrencyConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC1749D2A1D09A500926B3D /* CurrencyConstants.swift */; };
+		DEF84DA72A1FE48A0010CF57 /* ExchangeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF84DA62A1FE48A0010CF57 /* ExchangeEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		DEC1749B2A1D097D00926B3D /* ContractConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractConstants.swift; sourceTree = "<group>"; };
 		DEC1749D2A1D09A500926B3D /* CurrencyConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConstants.swift; sourceTree = "<group>"; };
 		DEC174CC2A1D2E3500926B3D /* WalletUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WalletUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEF84DA62A1FE48A0010CF57 /* ExchangeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DE4C03C42A02EE4C00C3FFDC /* RecentTransactionEntity.swift */,
 				DE4C03C52A02EE4C00C3FFDC /* SettingEntity.swift */,
 				DE4C03C62A02EE4C00C3FFDC /* TransactionEntity.swift */,
+				DEF84DA62A1FE48A0010CF57 /* ExchangeEntity.swift */,
 				DE4C03BC2A02EE0F00C3FFDC /* WalletEntity.docc */,
 				DE4C03BB2A02EE0F00C3FFDC /* WalletEntity.h */,
 			);
@@ -185,6 +188,7 @@
 				DE4C03BD2A02EE0F00C3FFDC /* WalletEntity.docc in Sources */,
 				DE4C03CB2A02EE4C00C3FFDC /* LockEntity.swift in Sources */,
 				DE4C03C92A02EE4C00C3FFDC /* SettingEntity.swift in Sources */,
+				DEF84DA72A1FE48A0010CF57 /* ExchangeEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

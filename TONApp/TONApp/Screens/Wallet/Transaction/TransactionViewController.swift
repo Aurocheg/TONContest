@@ -262,9 +262,11 @@ extension TransactionViewController: UITableViewDataSource {
                     }
                 }
                 
+
             case 1:
                 contentConfiguration.text = "Transaction"
                 contentConfiguration.secondaryText = entity.id.hash.hexString().splitString()
+                print(entity.id.hash.hexString())
             default: break
             }
         }
